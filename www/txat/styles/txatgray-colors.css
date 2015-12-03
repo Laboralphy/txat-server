@@ -1,0 +1,113 @@
+body {
+	background-color: #000;
+}
+
+div.window, div.popup {
+	background-color: #AAA;
+	border-color: #666;
+}
+
+/* CHAT */
+
+#chatZone {
+	background-color: #999;
+	border-color: #666;
+}
+
+/* USERS */
+
+#userZone {
+	background-color: #999;
+	border-color: #666;
+}
+
+#userZone div.user: {
+	cursor: pointer;
+}
+
+#userZone div.user:hover{
+	background-color: #00F;
+	color: #FFF;
+}
+
+/* CHANNELS */
+
+#channelZone div.channel {
+	background-color: #AAA;
+	border-color: #AAA;
+	color: #000;
+}
+
+
+#channelZone div.channel span.caption:hover {
+	color: #00F;
+}
+
+#channelZone div.channel span.close {
+	color: #800;
+	
+}
+
+#channelZone div.channel span.close:hover {
+	color: #F00;
+}
+
+#channelZone div.channel.highlighted {
+	background-color: #66F;
+	border-color: #66F;
+	color: #FFF;
+}
+
+#channelZone div.channel.selected {
+	background-color: #888;
+	border-color: #888;
+	color: #000;
+}
+
+/* POPUP */
+div.popup {
+	background-color: #AAA;
+	-moz-box-shadow: 0px 0px 32px 16px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0px 0px 32px 16px rgba(0, 0, 0, 0.6);
+	-o-box-shadow: 0px 0px 32px 16px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 0px 32px 16px rgba(0, 0, 0, 0.6);
+	border-color: black;
+}
+
+div.popup .close {
+	color: #800;
+}
+
+div.popup .close:hover {
+	color: #F00;
+}
+
+/* POPUPS PARTICULIERES */
+.popup.error div.title {
+	color: #700;
+}
+
+#channelList div.title {
+	color: #007;
+}
+
+#channelList div.content {
+	border-color #BBB;
+	background-color: #BBB;
+}
+
+#channelList div.content div.channel:hover {
+	background-color: #008;
+	color: #FFF;
+}
+
+#loginError {
+	color: #800;
+}
+
+
+
+/* Messages qui viennent d'arriver */
+div.message.new {
+	background-color: rgba(96, 96, 255, 0.3);
+}

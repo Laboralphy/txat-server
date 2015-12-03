@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>WebTxat</title>
+		<link href="styles/txatgray-styles.css" rel="stylesheet" media="screen" />
+		<link href="styles/txatgray-colors.css" rel="stylesheet" media="screen" />
+		<link href="styles/mobiles.css" rel="stylesheet" media="handler, all" />
+		<!-- LIBRARIES -->
+		<script type="text/javascript" src="/libraries/o2/o2.js"></script>
+		<script type="text/javascript" src="/libraries/ClassMagic/ClassMagic.js"></script>
+		<script type="text/javascript" src="/libraries/jquery/jquery-2.1.1.min.js"></script>
+		<!-- SOCKETS -->
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="/libraries/socket/ClientSocketAbstract.js"></script>
+		<!-- TXAT APPLICATION -->
+		<script type="text/javascript" src="scripts/Txat/ClientSocket.js"></script>
+		<script type="text/javascript" src="scripts/Txat/View.js"></script>
+		<script type="text/javascript" src="scripts/Txat/Application.js"></script>
+		<script type="text/javascript" src="scripts/LCDTimer.js"></script>
+		<!-- STARTUP -->
+		<script type="text/javascript" src="scripts/main.js"></script>
+	</head>
+	<body>
+		
+		<div id="logoWindow" class="window">
+			<div class="title">
+				real time webchat using html 5
+			</div>
+			<div class="loginForm">
+				<div class="loginFields">
+					<label for="iLogin">Nom d'utilisateur :</label>
+					<input id="iLogin" type="text" style="width: 100%" /><br /><br />
+					<label for="iPassw">Mot de passe :</label>
+					<input id="iPassw" type="password" style="width: 100%" /><br />
+					<div style="font-size: 85%; color: #444">Le mot de passe n'est requis que si le nom d'utilisateur a été préalablement protégé.</div>
+					<br />
+					<button id="bLogin">Connect</button><br />
+				</div>
+				<br/>
+				<span id="loginError"></span>
+			</div>
+			
+		</div>
+		
+		<div style="display: none" id="chatWindow" class="window">
+			<table class="chat">
+				<tbody>
+					<tr id="chatAndUserZones">
+						<td class="chat">
+							<div id="chatZone">
+							</div>
+						</td>
+						<td>
+							<div id="userZone">
+							</div>
+						</td>
+					</tr>
+					<tr> <!-- 87B400 -->
+						<td colspan="2"><button type="button" id="requestList" style="float: left">Channels</button><div id="channelZone" class="channels"></div></td>
+					</tr>
+					<tr>
+						<td><div class="input"><input id="input" type="text" /></div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

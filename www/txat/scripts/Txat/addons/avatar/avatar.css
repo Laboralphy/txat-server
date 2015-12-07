@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+.avatarpop {
+	width: 800px;
+	height: 500px;
+}
+
+.avatarpop .proposition {
+	border: dotted white;
+}
+
+.avatarpop .diapo {
+	overflow: auto;
+	height: 136px;
+}
+
+.avatarpop img.choice {
+	border: 1px dotted;
+	margin: 2px;
+	cursor: pointer;
+	width: 128px;
+	height: 128px;
+}
+
+.avatarpop img.choice:hover {
+	border: 1px solid;
+}
+
+.avatarpop img.yourchoice {
+	width: 48px;
+	height: 48px;
+}
+img.avatarItem {
+	width:28px;
+	height:28px;float: left;
+}
+div.message {
+}

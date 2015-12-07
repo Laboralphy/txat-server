@@ -1,0 +1,943 @@
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T13:23:31.665Z] [T] channel "general" created
+[2015-12-04T13:23:31.675Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T13:24:14.057Z] [T] access granted for user kenshiro
+[2015-12-04T13:24:14.058Z] [T] user "kenshiro" connected
+[2015-12-04T13:24:14.059Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T13:24:14.061Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T13:25:48.065Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T13:25:48.067Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T13:25:48.068Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/zery']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/zery' }
+[2015-12-04T13:25:49.525Z] [T] access granted for user zery
+[2015-12-04T13:25:49.525Z] [T] user "zery" connected
+[2015-12-04T13:25:49.525Z] [T] upref.storage/zery : not found
+[2015-12-04T13:25:49.526Z] [T] user "zery" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T13:26:01.608Z] [T] channel "general" created
+[2015-12-04T13:26:01.620Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/sdfh']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/sdfh' }
+[2015-12-04T13:26:05.583Z] [T] access granted for user sdfh
+[2015-12-04T13:26:05.584Z] [T] user "sdfh" connected
+[2015-12-04T13:26:05.585Z] [T] upref.storage/sdfh : not found
+[2015-12-04T13:26:05.587Z] [T] user "sdfh" has joined channel "general"
+[2015-12-04T13:29:34.610Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T13:29:34.611Z] [T] user "sdfh" has left channel "general"
+[2015-12-04T13:29:34.611Z] [T] user "sdfh" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/seruyzry']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/seruyzry' }
+[2015-12-04T13:29:37.405Z] [T] access granted for user seruyzry
+[2015-12-04T13:29:37.406Z] [T] user "seruyzry" connected
+[2015-12-04T13:29:37.406Z] [T] upref.storage/seruyzry : not found
+[2015-12-04T13:29:37.407Z] [T] user "seruyzry" has joined channel "general"
+[2015-12-04T13:29:51.759Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T13:29:51.759Z] [T] user "seruyzry" has left channel "general"
+[2015-12-04T13:29:51.759Z] [T] user "seruyzry" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/zsrthrtjh']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/zsrthrtjh' }
+[2015-12-04T13:29:54.320Z] [T] access granted for user zsrthrtjh
+[2015-12-04T13:29:54.320Z] [T] user "zsrthrtjh" connected
+[2015-12-04T13:29:54.320Z] [T] upref.storage/zsrthrtjh : not found
+[2015-12-04T13:29:54.321Z] [T] user "zsrthrtjh" has joined channel "general"
+[2015-12-04T13:31:55.303Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T13:31:55.303Z] [T] user "zsrthrtjh" has left channel "general"
+[2015-12-04T13:31:55.304Z] [T] user "zsrthrtjh" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/sdtujhertuj']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/sdtujhertuj' }
+[2015-12-04T13:31:57.960Z] [T] access granted for user sdtujhertuj
+[2015-12-04T13:31:57.960Z] [T] user "sdtujhertuj" connected
+[2015-12-04T13:31:57.960Z] [T] upref.storage/sdtujhertuj : not found
+[2015-12-04T13:31:57.961Z] [T] user "sdtujhertuj" has joined channel "general"
+[2015-12-04T13:32:08.586Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T13:32:08.586Z] [T] user "sdtujhertuj" has left channel "general"
+[2015-12-04T13:32:08.586Z] [T] user "sdtujhertuj" disconnected
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T13:33:47.695Z] [T] channel "general" created
+[2015-12-04T13:33:47.707Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/azeryqer']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/azeryqer' }
+[2015-12-04T13:34:23.775Z] [T] access granted for user azeryqer
+[2015-12-04T13:34:23.776Z] [T] user "azeryqer" connected
+[2015-12-04T13:34:23.776Z] [T] upref.storage/azeryqer : not found
+[2015-12-04T13:34:23.779Z] [T] user "azeryqer" has joined channel "general"
+[2015-12-04T13:36:37.602Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T13:36:37.603Z] [T] user "azeryqer" has left channel "general"
+[2015-12-04T13:36:37.604Z] [T] user "azeryqer" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/qsetg']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/qsetg' }
+[2015-12-04T13:36:40.015Z] [T] access granted for user qsetg
+[2015-12-04T13:36:40.016Z] [T] user "qsetg" connected
+[2015-12-04T13:36:40.016Z] [T] upref.storage/qsetg : not found
+[2015-12-04T13:36:40.017Z] [T] user "qsetg" has joined channel "general"
+[2015-12-04T13:37:30.023Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T13:37:30.024Z] [T] user "qsetg" has left channel "general"
+[2015-12-04T13:37:30.024Z] [T] user "qsetg" disconnected
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T13:37:42.963Z] [T] channel "general" created
+[2015-12-04T13:37:42.973Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/sdrtgjh']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/sdrtgjh' }
+[2015-12-04T13:37:47.473Z] [T] access granted for user sdrtgjh
+[2015-12-04T13:37:47.473Z] [T] user "sdrtgjh" connected
+[2015-12-04T13:37:47.474Z] [T] upref.storage/sdrtgjh : not found
+[2015-12-04T13:37:47.477Z] [T] user "sdrtgjh" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T13:39:10.979Z] [T] channel "general" created
+[2015-12-04T13:39:10.990Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/qsdh']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/qsdh' }
+[2015-12-04T13:39:14.468Z] [T] access granted for user qsdh
+[2015-12-04T13:39:14.468Z] [T] user "qsdh" connected
+[2015-12-04T13:39:14.469Z] [T] upref.storage/qsdh : not found
+[2015-12-04T13:39:14.472Z] [T] user "qsdh" has joined channel "general"
+[2015-12-04T13:45:38.931Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T13:45:38.932Z] [T] user "qsdh" has left channel "general"
+[2015-12-04T13:45:38.933Z] [T] user "qsdh" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/tyutyu']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/tyutyu' }
+[2015-12-04T13:45:42.565Z] [T] access granted for user tyutyu
+[2015-12-04T13:45:42.568Z] [T] user "tyutyu" connected
+[2015-12-04T13:45:42.569Z] [T] upref.storage/tyutyu : not found
+[2015-12-04T13:45:42.570Z] [T] user "tyutyu" has joined channel "general"
+[2015-12-04T14:28:23.138Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:28:23.138Z] [T] user "tyutyu" has left channel "general"
+[2015-12-04T14:28:23.138Z] [T] user "tyutyu" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:28:28.656Z] [T] access granted for user kenshiro
+[2015-12-04T14:28:28.657Z] [T] user "kenshiro" connected
+[2015-12-04T14:28:28.657Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:28:28.658Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T14:29:21.933Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:29:21.933Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:29:21.933Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:29:26.668Z] [T] access granted for user kenshiro
+[2015-12-04T14:29:26.668Z] [T] user "kenshiro" connected
+[2015-12-04T14:29:26.669Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:29:26.670Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T14:30:21.163Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:30:21.163Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:30:21.163Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:30:25.930Z] [T] access granted for user kenshiro
+[2015-12-04T14:30:25.930Z] [T] user "kenshiro" connected
+[2015-12-04T14:30:25.930Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:30:25.931Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T14:36:04.966Z] [T] channel "general" created
+[2015-12-04T14:36:04.985Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kesnhiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kesnhiro' }
+[2015-12-04T14:36:12.330Z] [T] access granted for user kesnhiro
+[2015-12-04T14:36:12.331Z] [T] user "kesnhiro" connected
+[2015-12-04T14:36:12.331Z] [T] upref.storage/kesnhiro : not found
+[2015-12-04T14:36:12.335Z] [T] user "kesnhiro" has joined channel "general"
+[2015-12-04T14:36:48.176Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:36:48.178Z] [T] user "kesnhiro" has left channel "general"
+[2015-12-04T14:36:48.179Z] [T] user "kesnhiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:36:51.995Z] [T] access granted for user kenshiro
+[2015-12-04T14:36:51.995Z] [T] user "kenshiro" connected
+[2015-12-04T14:36:51.995Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:36:51.996Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T14:38:32.825Z] [T] channel "general" created
+[2015-12-04T14:38:32.836Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:38:40.885Z] [T] access granted for user kenshiro
+[2015-12-04T14:38:40.886Z] [T] user "kenshiro" connected
+[2015-12-04T14:38:40.887Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:38:40.890Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T14:41:16.706Z] [T] channel "general" created
+[2015-12-04T14:41:16.721Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshir']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshir' }
+[2015-12-04T14:41:23.198Z] [T] access granted for user kenshir
+[2015-12-04T14:41:23.198Z] [T] user "kenshir" connected
+[2015-12-04T14:41:23.199Z] [T] upref.storage/kenshir : not found
+[2015-12-04T14:41:23.202Z] [T] user "kenshir" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T14:42:05.192Z] [T] channel "general" created
+[2015-12-04T14:42:05.203Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:42:10.446Z] [T] access granted for user kenshiro
+[2015-12-04T14:42:10.446Z] [T] user "kenshiro" connected
+[2015-12-04T14:42:10.447Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:42:10.450Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-04T14:42:50.163Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:42:50.164Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:42:50.164Z] [T] user "kenshiro" disconnected
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T14:42:58.581Z] [T] channel "general" created
+[2015-12-04T14:42:58.592Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:43:04.588Z] [T] access granted for user kenshiro
+[2015-12-04T14:43:04.589Z] [T] user "kenshiro" connected
+[2015-12-04T14:43:04.589Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:43:04.592Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+www/txat/scripts/Txat/addons/avatar/images/128_default/2.png www/txat/undefinedkenshiro.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-04T14:44:06.488Z] [T] channel "general" created
+[2015-12-04T14:44:06.498Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:44:12.681Z] [T] access granted for user kenshiro
+[2015-12-04T14:44:12.682Z] [T] user "kenshiro" connected
+[2015-12-04T14:44:12.683Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:44:12.686Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+www/txat/scripts/Txat/addons/avatar/images/128_default/2.png www/txat/undefinedkenshiro.png
+[2015-12-04T14:46:12.255Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:46:12.256Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:46:12.257Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:46:16.119Z] [T] access granted for user kenshiro
+[2015-12-04T14:46:16.119Z] [T] user "kenshiro" connected
+[2015-12-04T14:46:16.119Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:46:16.120Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+www/txat/scripts/Txat/addons/avatar/images/128_default/2.png www/txat/undefinedkenshiro.png
+[2015-12-04T14:47:06.797Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:47:06.797Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:47:06.797Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshuiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshuiro' }
+[2015-12-04T14:47:10.420Z] [T] access granted for user kenshuiro
+[2015-12-04T14:47:10.420Z] [T] user "kenshuiro" connected
+[2015-12-04T14:47:10.421Z] [T] upref.storage/kenshuiro : not found
+[2015-12-04T14:47:10.423Z] [T] user "kenshuiro" has joined channel "general"
+[2015-12-04T14:47:21.946Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:47:21.946Z] [T] user "kenshuiro" has left channel "general"
+[2015-12-04T14:47:21.946Z] [T] user "kenshuiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/qdfh']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/qdfh' }
+[2015-12-04T14:47:23.637Z] [T] access granted for user qdfh
+[2015-12-04T14:47:23.637Z] [T] user "qdfh" connected
+[2015-12-04T14:47:23.637Z] [T] upref.storage/qdfh : not found
+[2015-12-04T14:47:23.638Z] [T] user "qdfh" has joined channel "general"
+[2015-12-04T14:47:26.551Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:47:26.551Z] [T] user "qdfh" has left channel "general"
+[2015-12-04T14:47:26.551Z] [T] user "qdfh" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:47:33.365Z] [T] access granted for user kenshiro
+[2015-12-04T14:47:33.365Z] [T] user "kenshiro" connected
+[2015-12-04T14:47:33.365Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:47:33.366Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+www/txat/scripts/Txat/addons/avatar/images/128_default/2.png www/txat/undefinedkenshiro.png
+[2015-12-04T14:48:37.844Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:48:37.844Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:48:37.844Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:48:42.064Z] [T] access granted for user kenshiro
+[2015-12-04T14:48:42.064Z] [T] user "kenshiro" connected
+[2015-12-04T14:48:42.065Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:48:42.065Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T14:50:13.392Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:50:13.392Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:50:13.393Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:50:17.861Z] [T] access granted for user kenshiro
+[2015-12-04T14:50:17.861Z] [T] user "kenshiro" connected
+[2015-12-04T14:50:17.861Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:50:17.862Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T14:52:00.172Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:52:00.172Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:52:00.172Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:52:04.970Z] [T] access granted for user kenshiro
+[2015-12-04T14:52:04.970Z] [T] user "kenshiro" connected
+[2015-12-04T14:52:04.970Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:52:04.971Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T14:55:30.117Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:55:30.117Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:55:30.117Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:55:33.811Z] [T] access granted for user kenshiro
+[2015-12-04T14:55:33.812Z] [T] user "kenshiro" connected
+[2015-12-04T14:55:33.812Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:55:33.813Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T14:56:36.611Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:56:36.611Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:56:36.611Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:56:39.920Z] [T] access granted for user kenshiro
+[2015-12-04T14:56:39.920Z] [T] user "kenshiro" connected
+[2015-12-04T14:56:39.920Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:56:39.921Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T14:57:56.958Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:57:56.958Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:57:56.958Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:58:01.052Z] [T] access granted for user kenshiro
+[2015-12-04T14:58:01.052Z] [T] user "kenshiro" connected
+[2015-12-04T14:58:01.053Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:58:01.053Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-04T14:58:41.774Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-04T14:58:41.774Z] [T] user "kenshiro" has left channel "general"
+[2015-12-04T14:58:41.775Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-04T14:58:44.683Z] [T] access granted for user kenshiro
+[2015-12-04T14:58:44.683Z] [T] user "kenshiro" connected
+[2015-12-04T14:58:44.683Z] [T] upref.storage/kenshiro : not found
+[2015-12-04T14:58:44.684Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T08:32:58.399Z] [T] channel "general" created
+[2015-12-07T08:32:58.424Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T08:40:53.589Z] [T] access granted for user kenshiro
+[2015-12-07T08:40:53.589Z] [T] user "kenshiro" connected
+[2015-12-07T08:40:53.590Z] [T] upref.storage/kenshiro : not found
+[2015-12-07T08:40:53.593Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T08:53:40.484Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T08:53:40.485Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T08:53:40.486Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/ralphy']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/ralphy' }
+[2015-12-07T08:53:51.562Z] [T] access granted for user ralphy
+[2015-12-07T08:53:51.563Z] [T] user "ralphy" connected
+[2015-12-07T08:53:51.563Z] [T] upref.storage/ralphy : not found
+[2015-12-07T08:53:51.564Z] [T] user "ralphy" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/6.png
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T08:54:24.006Z] [T] access granted for user toto
+[2015-12-07T08:54:24.007Z] [T] user "toto" connected
+[2015-12-07T08:54:24.007Z] [T] upref.storage/toto : not found
+[2015-12-07T08:54:24.008Z] [T] user "toto" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+/txat/scripts/Txat/addons/avatar/images/128_default/7.png
+[2015-12-07T08:55:31.603Z] [T] channel "xxx" created
+[2015-12-07T08:55:31.603Z] [T] user "toto" has joined channel "xxx"
+[2015-12-07T08:57:44.307Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T08:57:44.308Z] [T] user "toto" has left channel "general"
+[2015-12-07T08:57:44.309Z] [T] user "toto" has left channel "xxx"
+[2015-12-07T08:57:44.309Z] [T] channel "xxx" destroyed
+[2015-12-07T08:57:44.309Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/sfqsdfgh']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/sfqsdfgh' }
+[2015-12-07T08:57:49.791Z] [T] access granted for user sfqsdfgh
+[2015-12-07T08:57:49.791Z] [T] user "sfqsdfgh" connected
+[2015-12-07T08:57:49.792Z] [T] upref.storage/sfqsdfgh : not found
+[2015-12-07T08:57:49.792Z] [T] user "sfqsdfgh" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T08:58:05.471Z] [T] channel "general" created
+[2015-12-07T08:58:05.482Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/sdfgh']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/sdfgh' }
+[2015-12-07T08:58:11.115Z] [T] access granted for user sdfgh
+[2015-12-07T08:58:11.116Z] [T] user "sdfgh" connected
+[2015-12-07T08:58:11.117Z] [T] upref.storage/sdfgh : not found
+[2015-12-07T08:58:11.120Z] [T] user "sdfgh" has joined channel "general"
+{ message: 'sdfb',
+  channel: 
+   { aUsers: [ 1 ],
+     oWhiteList: { oList: {} },
+     oBlackList: { oList: {} },
+     bPublic: true,
+     bPermanent: true,
+     oBannedWhy: {},
+     id: 1,
+     sName: 'general' },
+  user: 
+   { oPowers: { '1': [Object] },
+     id: 1,
+     sName: 'sdfgh',
+     sDisplayName: 'sdfgh' } }
+[2015-12-07T09:10:19.722Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T09:10:19.723Z] [T] user "sdfgh" has left channel "general"
+[2015-12-07T09:10:19.724Z] [T] user "sdfgh" disconnected
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T09:10:28.968Z] [T] channel "general" created
+[2015-12-07T09:10:28.981Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T09:10:35.409Z] [T] access granted for user kenshiro
+[2015-12-07T09:10:35.410Z] [T] user "kenshiro" connected
+[2015-12-07T09:10:35.411Z] [T] upref.storage/kenshiro : not found
+[2015-12-07T09:10:35.414Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T09:10:54.700Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T09:10:54.701Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T09:10:54.701Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T09:10:57.831Z] [T] access granted for user kenshiro
+[2015-12-07T09:10:57.831Z] [T] user "kenshiro" connected
+[2015-12-07T09:10:57.831Z] [T] upref.storage/kenshiro : not found
+[2015-12-07T09:10:57.832Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T09:14:56.041Z] [T] channel "general" created
+[2015-12-07T09:14:56.051Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T09:15:03.159Z] [T] access granted for user kenshiro
+[2015-12-07T09:15:03.160Z] [T] user "kenshiro" connected
+[2015-12-07T09:15:03.161Z] [T] upref.storage/kenshiro : not found
+[2015-12-07T09:15:03.164Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+aaazaz
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T09:18:06.033Z] [T] channel "general" created
+[2015-12-07T09:18:06.044Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T09:18:14.495Z] [T] access granted for user kenshiro
+[2015-12-07T09:18:14.495Z] [T] user "kenshiro" connected
+[2015-12-07T09:18:14.496Z] [T] upref.storage/kenshiro : not found
+[2015-12-07T09:18:14.499Z] [T] user "kenshiro" has joined channel "general"
+xxxx::upref.storage/kenshiro/avatarImage /txat/scripts/Txat/addons/avatar/images/128_default/2.png
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T09:18:46.842Z] [T] channel "general" created
+[2015-12-07T09:18:46.865Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T09:18:53.919Z] [T] access granted for user kenshiro
+[2015-12-07T09:18:53.919Z] [T] user "kenshiro" connected
+[2015-12-07T09:18:53.920Z] [T] upref.storage/kenshiro : not found
+[2015-12-07T09:18:53.923Z] [T] user "kenshiro" has joined channel "general"
+xxxx::upref.storage/kenshiro/avatarImage /txat/scripts/Txat/addons/avatar/images/128_default/2.png
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T09:21:12.941Z] [T] channel "general" created
+[2015-12-07T09:21:12.952Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T09:21:25.023Z] [T] access granted for user kenshiro
+[2015-12-07T09:21:25.024Z] [T] user "kenshiro" connected
+[2015-12-07T09:21:25.024Z] [T] upref.storage/kenshiro : not found
+[2015-12-07T09:21:25.044Z] [T] user "kenshiro" has joined channel "general"
+xxxx::upref.storage/kenshiro/avatarImage /txat/scripts/Txat/addons/avatar/images/128_default/2.png
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+yyyy::upref.storage/kenshiro/avatarImage /txat/scripts/Txat/addons/avatar/images/128_default/2.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T09:25:07.196Z] [T] channel "general" created
+[2015-12-07T09:25:07.207Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T09:25:13.362Z] [T] access granted for user kenshiro
+[2015-12-07T09:25:13.363Z] [T] user "kenshiro" connected
+[2015-12-07T09:25:13.364Z] [T] loading upref: avatarImage
+[2015-12-07T09:25:13.368Z] [T] user "kenshiro" has joined channel "general"
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T09:27:25.152Z] [T] access granted for user toto
+[2015-12-07T09:27:25.153Z] [T] user "toto" connected
+[2015-12-07T09:27:25.153Z] [T] upref.storage/toto : not found
+[2015-12-07T09:27:25.154Z] [T] user "toto" has joined channel "general"
+[2015-12-07T10:00:23.967Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T10:00:23.968Z] [T] user "toto" has left channel "general"
+[2015-12-07T10:00:23.970Z] [T] user "toto" disconnected
+Error: This user name "kenshiro" is already in use
+    at O2.createClass.checkUserLoginName (/var/www/txat/txat-server/node_modules/txat/System.js:189:10)
+    at Socket.<anonymous> (/var/www/txat/txat-server/node_modules/txat/index.js:88:10)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at Socket.onevent (/var/www/txat/txat-server/node_modules/socket.io/lib/socket.js:330:8)
+    at Socket.onpacket (/var/www/txat/txat-server/node_modules/socket.io/lib/socket.js:290:12)
+    at Client.ondecoded (/var/www/txat/txat-server/node_modules/socket.io/lib/client.js:193:14)
+    at Decoder.Emitter.emit (/var/www/txat/txat-server/node_modules/socket.io/node_modules/socket.io-parser/node_modules/component-emitter/index.js:134:20)
+    at Decoder.add (/var/www/txat/txat-server/node_modules/socket.io/node_modules/socket.io-parser/index.js:247:12)
+    at Client.ondata (/var/www/txat/txat-server/node_modules/socket.io/lib/client.js:175:18)
+Error: This user name "kenshiro" is already in use
+    at O2.createClass.checkUserLoginName (/var/www/txat/txat-server/node_modules/txat/System.js:189:10)
+    at Socket.<anonymous> (/var/www/txat/txat-server/node_modules/txat/index.js:88:10)
+    at emitOne (events.js:77:13)
+    at Socket.emit (events.js:169:7)
+    at Socket.onevent (/var/www/txat/txat-server/node_modules/socket.io/lib/socket.js:330:8)
+    at Socket.onpacket (/var/www/txat/txat-server/node_modules/socket.io/lib/socket.js:290:12)
+    at Client.ondecoded (/var/www/txat/txat-server/node_modules/socket.io/lib/client.js:193:14)
+    at Decoder.Emitter.emit (/var/www/txat/txat-server/node_modules/socket.io/node_modules/socket.io-parser/node_modules/component-emitter/index.js:134:20)
+    at Decoder.add (/var/www/txat/txat-server/node_modules/socket.io/node_modules/socket.io-parser/index.js:247:12)
+    at Client.ondata (/var/www/txat/txat-server/node_modules/socket.io/lib/client.js:175:18)
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:00:41.307Z] [T] access granted for user toto
+[2015-12-07T10:00:41.307Z] [T] user "toto" connected
+[2015-12-07T10:00:41.307Z] [T] loading upref: 
+[2015-12-07T10:00:41.308Z] [T] user "toto" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T10:00:59.800Z] [T] channel "general" created
+[2015-12-07T10:00:59.810Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T10:01:07.032Z] [T] access granted for user kenshiro
+[2015-12-07T10:01:07.033Z] [T] user "kenshiro" connected
+[2015-12-07T10:01:07.034Z] [T] loading upref: avatarImage
+[2015-12-07T10:01:07.037Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T10:02:25.514Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T10:02:25.515Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T10:02:25.516Z] [T] user "kenshiro" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:02:31.897Z] [T] access granted for user toto
+[2015-12-07T10:02:31.897Z] [T] user "toto" connected
+[2015-12-07T10:02:31.897Z] [T] loading upref: 
+[2015-12-07T10:02:31.898Z] [T] user "toto" has joined channel "general"
+[2015-12-07T10:29:42.769Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T10:29:42.769Z] [T] user "toto" has left channel "general"
+[2015-12-07T10:29:42.769Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:29:46.348Z] [T] access granted for user toto
+[2015-12-07T10:29:46.348Z] [T] user "toto" connected
+[2015-12-07T10:29:46.348Z] [T] loading upref: 
+[2015-12-07T10:29:46.349Z] [T] user "toto" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T10:30:34.275Z] [T] channel "general" created
+[2015-12-07T10:30:34.286Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:30:40.808Z] [T] access granted for user toto
+[2015-12-07T10:30:40.810Z] [T] user "toto" connected
+[2015-12-07T10:30:40.811Z] [T] loading upref: 
+[2015-12-07T10:30:40.814Z] [T] user "toto" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T10:31:01.393Z] [T] channel "general" created
+[2015-12-07T10:31:01.407Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:31:05.702Z] [T] access granted for user toto
+[2015-12-07T10:31:05.703Z] [T] user "toto" connected
+[2015-12-07T10:31:05.703Z] [T] loading upref: 
+[2015-12-07T10:31:05.706Z] [T] user "toto" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T10:31:46.938Z] [T] channel "general" created
+[2015-12-07T10:31:46.948Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:31:51.126Z] [T] access granted for user toto
+[2015-12-07T10:31:51.127Z] [T] user "toto" connected
+[2015-12-07T10:31:51.128Z] [T] loading upref: 
+[2015-12-07T10:31:51.131Z] [T] user "toto" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T10:32:54.082Z] [T] channel "general" created
+[2015-12-07T10:32:54.092Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:33:01.139Z] [T] access granted for user toto
+[2015-12-07T10:33:01.141Z] [T] user "toto" connected
+[2015-12-07T10:33:01.141Z] [T] loading upref: 
+[2015-12-07T10:33:01.144Z] [T] user "toto" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T10:35:16.693Z] [T] channel "general" created
+[2015-12-07T10:35:16.714Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:35:20.111Z] [T] access granted for user toto
+[2015-12-07T10:35:20.112Z] [T] user "toto" connected
+[2015-12-07T10:35:20.112Z] [T] loading upref: 
+[2015-12-07T10:35:20.115Z] [T] user "toto" has joined channel "general"
+[2015-12-07T10:38:42.734Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T10:38:42.735Z] [T] user "toto" has left channel "general"
+[2015-12-07T10:38:42.736Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T10:38:45.213Z] [T] access granted for user toto
+[2015-12-07T10:38:45.213Z] [T] user "toto" connected
+[2015-12-07T10:38:45.213Z] [T] loading upref: 
+[2015-12-07T10:38:45.214Z] [T] user "toto" has joined channel "general"
+[2015-12-07T13:17:43.854Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T13:17:43.854Z] [T] user "toto" has left channel "general"
+[2015-12-07T13:17:43.855Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T13:17:47.097Z] [T] access granted for user toto
+[2015-12-07T13:17:47.097Z] [T] user "toto" connected
+[2015-12-07T13:17:47.097Z] [T] loading upref: 
+[2015-12-07T13:17:47.098Z] [T] user "toto" has joined channel "general"
+[2015-12-07T13:19:17.670Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T13:19:17.670Z] [T] user "toto" has left channel "general"
+[2015-12-07T13:19:17.671Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T13:19:20.291Z] [T] access granted for user toto
+[2015-12-07T13:19:20.292Z] [T] user "toto" connected
+[2015-12-07T13:19:20.292Z] [T] loading upref: 
+[2015-12-07T13:19:20.293Z] [T] user "toto" has joined channel "general"
+xxxx::upref.storage/toto/avatarImage /txat/scripts/Txat/addons/avatar/images/128_default/10.png
+/txat/scripts/Txat/addons/avatar/images/128_default/10.png
+yyyy::upref.storage/toto/avatarImage /txat/scripts/Txat/addons/avatar/images/128_default/10.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T13:20:36.059Z] [T] channel "general" created
+[2015-12-07T13:20:36.070Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T13:20:40.847Z] [T] access granted for user toto
+[2015-12-07T13:20:40.847Z] [T] user "toto" connected
+[2015-12-07T13:20:40.848Z] [T] loading upref: avatarImage
+[2015-12-07T13:20:40.852Z] [T] user "toto" has joined channel "general"
+xxxx::upref.storage/toto/avatarImage /txat/scripts/Txat/addons/avatar/images/128_default/4.png
+/txat/scripts/Txat/addons/avatar/images/128_default/4.png
+yyyy::upref.storage/toto/avatarImage /txat/scripts/Txat/addons/avatar/images/128_default/4.png
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/kenshiro']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/kenshiro' }
+[2015-12-07T13:27:41.778Z] [T] access granted for user kenshiro
+[2015-12-07T13:27:41.778Z] [T] user "kenshiro" connected
+[2015-12-07T13:27:41.779Z] [T] loading upref: avatarImage
+[2015-12-07T13:27:41.780Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T13:37:24.613Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T13:37:24.614Z] [T] user "toto" has left channel "general"
+[2015-12-07T13:37:24.615Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T13:37:27.567Z] [T] access granted for user toto
+[2015-12-07T13:37:27.567Z] [T] user "toto" connected
+[2015-12-07T13:37:27.568Z] [T] loading upref: avatarImage
+[2015-12-07T13:37:27.568Z] [T] user "toto" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T13:37:44.104Z] [T] channel "general" created
+[2015-12-07T13:37:44.118Z] server is listening on port 6616...
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T13:37:48.397Z] [T] access granted for user toto
+[2015-12-07T13:37:48.397Z] [T] user "toto" connected
+[2015-12-07T13:37:48.398Z] [T] loading upref: avatarImage
+[2015-12-07T13:37:48.402Z] [T] user "toto" has joined channel "general"
+[2015-12-07T13:41:38.957Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T13:41:38.958Z] [T] user "toto" has left channel "general"
+[2015-12-07T13:41:38.959Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T13:41:41.816Z] [T] access granted for user toto
+[2015-12-07T13:41:41.817Z] [T] user "toto" connected
+[2015-12-07T13:41:41.817Z] [T] loading upref: avatarImage
+[2015-12-07T13:41:41.818Z] [T] user "toto" has joined channel "general"
+[2015-12-07T14:02:56.018Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T14:02:56.018Z] [T] user "toto" has left channel "general"
+[2015-12-07T14:02:56.019Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T14:02:59.454Z] [T] access granted for user toto
+[2015-12-07T14:02:59.454Z] [T] user "toto" connected
+[2015-12-07T14:02:59.455Z] [T] loading upref: avatarImage
+[2015-12-07T14:02:59.455Z] [T] user "toto" has joined channel "general"
+[2015-12-07T14:14:03.279Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T14:14:03.279Z] [T] user "toto" has left channel "general"
+[2015-12-07T14:14:03.279Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T14:14:06.698Z] [T] access granted for user toto
+[2015-12-07T14:14:06.698Z] [T] user "toto" connected
+[2015-12-07T14:14:06.698Z] [T] loading upref: avatarImage
+[2015-12-07T14:14:06.701Z] [T] user "toto" has joined channel "general"
+[2015-12-07T14:21:48.590Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T14:21:48.590Z] [T] user "toto" has left channel "general"
+[2015-12-07T14:21:48.590Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T14:21:51.195Z] [T] access granted for user toto
+[2015-12-07T14:21:51.195Z] [T] user "toto" connected
+[2015-12-07T14:21:51.196Z] [T] loading upref: avatarImage
+[2015-12-07T14:21:51.197Z] [T] user "toto" has joined channel "general"
+[2015-12-07T14:23:37.209Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T14:23:37.210Z] [T] user "toto" has left channel "general"
+[2015-12-07T14:23:37.210Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T14:23:40.040Z] [T] access granted for user toto
+[2015-12-07T14:23:40.040Z] [T] user "toto" connected
+[2015-12-07T14:23:40.041Z] [T] loading upref: avatarImage
+[2015-12-07T14:23:40.042Z] [T] user "toto" has joined channel "general"
+[2015-12-07T14:24:41.352Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T14:24:41.352Z] [T] user "toto" has left channel "general"
+[2015-12-07T14:24:41.353Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T14:24:45.108Z] [T] access granted for user toto
+[2015-12-07T14:24:45.108Z] [T] user "toto" connected
+[2015-12-07T14:24:45.109Z] [T] loading upref: avatarImage
+[2015-12-07T14:24:45.110Z] [T] user "toto" has joined channel "general"
+[2015-12-07T14:25:34.391Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T14:25:34.391Z] [T] user "toto" has left channel "general"
+[2015-12-07T14:25:34.391Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T14:25:36.949Z] [T] access granted for user toto
+[2015-12-07T14:25:36.949Z] [T] user "toto" connected
+[2015-12-07T14:25:36.949Z] [T] loading upref: avatarImage
+[2015-12-07T14:25:36.950Z] [T] user "toto" has joined channel "general"
+[2015-12-07T14:26:03.590Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T14:26:03.590Z] [T] user "toto" has left channel "general"
+[2015-12-07T14:26:03.590Z] [T] user "toto" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto*']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto*' }
+[2015-12-07T14:26:05.931Z] [T] access granted for user toto*
+[2015-12-07T14:26:05.931Z] [T] user "toto*" connected
+[2015-12-07T14:26:05.931Z] [T] upref.storage/toto* : not found
+[2015-12-07T14:26:05.932Z] [T] user "toto*" has joined channel "general"
+[2015-12-07T14:26:47.074Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T14:26:47.074Z] [T] user "toto*" has left channel "general"
+[2015-12-07T14:26:47.074Z] [T] user "toto*" disconnected
+{ [Error: ENOENT: no such file or directory, stat 'pass.storage/toto']
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'pass.storage/toto' }
+[2015-12-07T14:26:49.569Z] [T] access granted for user toto
+[2015-12-07T14:26:49.570Z] [T] user "toto" connected
+[2015-12-07T14:26:49.570Z] [T] loading upref: avatarImage
+[2015-12-07T14:26:49.571Z] [T] user "toto" has joined channel "general"

@@ -53,7 +53,11 @@ table.chat td.chat {
 	margin-left: 4px;
 }
 
-#chatZone div.message span.nick {
+#chatZone div.message span.username {
+	font-weight: bold;
+}
+
+#chatZone div.message span.separator {
 	font-weight: bold;
 	padding-right: 8px;
 }

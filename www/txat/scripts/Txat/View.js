@@ -103,6 +103,9 @@ O2.createClass('TXAT.View', {
 		if (oStyle) {
 			$stuff.css(oStyle);
 		}
+		if (!sTab && sTab !== 0) {
+			sTab = this.sTab;
+		}
 		if (sTab == this.sTab) {
 			$chat.append($stuff);
 			if (!this.bScrollLock) {
@@ -111,7 +114,13 @@ O2.createClass('TXAT.View', {
 		} else {
 			this.setTabClass(sTab, 'highlighted');
 		}
-		this.trigger('chatItemAppended', {t: sTab, o:$stuff.get(0), s:sContent, d: oData});
+		if (!oData) {
+			oData = {};
+		}
+		oData.s = sContent;
+		oData.o = $stuff.get(0);
+		oData.t = sTab;
+		this.trigger('chatItemAppended', oData);
 		this.oTabs[sTab].push($stuff.get(0));
 		while (this.oTabs[sTab].length > this.MAX_CHANNEL_MESSAGE_COUNT) {
 			$(this.oTabs[sTab].shift()).remove();
@@ -334,7 +343,7 @@ O2.createClass('TXAT.View', {
 		} else {
 			document.title = this.sMessageIcon + ' - ' + this.sTitle;
 		}
-		var s = '<span class="nick">' + sUser + ':</span><span class="usermessage">' + this.escapeHTMLEntities(sMessage) + '</span>';
+		var s = '<span class="username">' + sUser + '</span><span class="separator">:</span><span class="usermessage">' + this.escapeHTMLEntities(sMessage) + '</span>';
 		this.appendChatItem(sTab, s, null, data);
 	},
 

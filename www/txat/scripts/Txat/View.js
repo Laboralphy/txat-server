@@ -103,6 +103,9 @@ O2.createClass('TXAT.View', {
 		if (oStyle) {
 			$stuff.css(oStyle);
 		}
+		if (!sTab && sTab !== 0) {
+			sTab = this.sTab;
+		}
 		if (sTab == this.sTab) {
 			$chat.append($stuff);
 			if (!this.bScrollLock) {

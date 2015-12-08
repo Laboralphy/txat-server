@@ -8,34 +8,24 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	oView.on('chatItemAppended', function(data) {
 //		console.log("chatitem", data);
 		var $item = $(data.o);
-		$item.addClass('avatarMessage')
+		$item.addClass('avatarMessage');
+		var $username = $('span.username', $item);
 		var $usermessage = $('span.usermessage', $item);
 		if ($usermessage.length > 0) {
-			var usernick = $('span.nick', $item).html().replace(':', '');
-			$item.append("<br/>");
+			//var usernick = $('span.username', $item).html().replace(':', '');
+			//$item.append("<br/>");
+			var $img = $('<img/>');
+			$img.attr('src', data.avatar.image);
+			$img.addClass('avatarItem');
+			$username.before($img);
+			
+			$item.css({
+				color: data.avatar.color,
+				backgroundColor: data.avatar.bg,
+				borderColor:data.avatar.border
+			})
 		}
 		
-//		if ($usermessage.length > 0) {
-//			var sContent = $usermessage.text();
-//			if (sContent.substr(0, TAG_START.length) === TAG_START && sContent.substr(-TAG_END.length) === TAG_END) {
-//				var sCode = JSON.parse(sContent.substr(TAG_START.length, sContent.length - TAG_START.length - TAG_END.length));
-//				var hl = hljs.highlightAuto(sCode);
-//				var sCode = hl.value;
-//				var sLang = hl.language;				
-//				if ('second_best' in hl) {
-//					sLang += ', ' + hl.second_best.language;
-//				}
-//				var $code = $('<pre style="margin: 4px; border: solid thin #555; background-color: #DDD; max-height: 256px; overflow: auto"><code>' + sCode + '<code></pre>');
-//				var $commands = $('<span class="codehlcommands"></span>');
-//				var $btoggle = $('<button type="button">code : <b>' + sLang + '</b></button>');
-//				$btoggle.on('click', function(oEvent) {
-//					$code.slideToggle(200);
-//				});
-//				$commands.append($btoggle);
-//				$usermessage.remove();
-//				$item.append($commands).append($code);
-//			}
-//		}
 	});
 	
 	// créer une nouvelle commande /code
@@ -69,62 +59,50 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			var $col = $("<p>").html('choose border and text colors');
 			
 			
-			var $example = $('<div class="message avatarMessage">'
+			var $example = $('<div class="message avatarMessage avatarExample">'
 				+ '<img src="/txat/scripts/Txat/addons/avatar/images/128_default/default.png" class="avatarItem yourchoice">'
 				+'<span class="nick">'+ oApplication.getUserName() + ':</span>'
 				+'<span class="usermessage">your message</span><br></div>'
-				+'<input id="color" type="text" placeholder="text color"/>'
-				+'<input id="colorborder" type="text" placeholder="border color"/>'
-				+'<input id="colorbg" type="text" placeholder="background color"/>'
-				+'<div id="colordiv"></div>'
-				+'<div id="colordivborder"></div>'
-				+'<div id="colordivbg"></div>');
+				+'<input id="color" type="color" placeholder="text color"/>'
+				+'<input id="colorborder" type="color" placeholder="border color"/>'
+				+'<input id="colorbg" type="color" placeholder="background color"/>'
+				);
 			
 			$popcont.append($example);
 			
+			var $avatarmessage = $("div.avatarExample");
+			
 			//textcolor
-			var $colorTextInput = $("#color", $example);
-			var $colorDiv = $("#colordiv", $example);
-//			//bordercolor
-//			var $colorBorderInput = $("#colorborder", $example);
-//			var $colorDivBorder = $("#colordivborder", $example);
-//			//bordercolor
-//			var $colorBgInput = $("#colorbg", $example);
-//			var $colorDivBg = $("#colordivbg", $example);
-//			
-//			var $ok = $("<button>").html("ok");
-//			$popcont.append($ok);
-//			//event on choice list
-//			$("img.choice").on('click', function() {
-//				$yourchoice.attr('src', $(this).attr('src'));
-//			});
-//			//event on validation
-//			$ok.on('click', function(oEvent) {
-//				oApplication.command('/upref avatarImage ' + $yourchoice.attr('src'));
-//				$pop.fadeOut('fast');
-//			});
-//			//event on color
-//			$colorTextInput.on('click', function(oEvent) {
-//				$colorDiv.show();
-//			});
-//			$colorBorderInput.on('click', function(oEvent) {
-//				$colorDivBorder.show();
-//			});
-//			$colorBgInput.on('click', function(oEvent) {
-//				$colorDivBg.show();
-//			});
-//			$colorDiv.farbtastic('#color', function(color) {
-//				$(".avatarMessage").css('color', color);
-//				$colorDiv.hide();
-//			});
-//			$colorDivBorder.farbtastic('#colorborder', function() {
-//				$(".avatarMessage").css('border-color', color);
-//				$colorDivBorder.hide();
-//			});
-//			$colorDivBg.farbtastic('#colorbbg', function() {
-//				$(".avatarMessage").css('background-color', color);
-//				$colorDivBg.hide();
-//			});
+			var $colorTextInput = $("#color", $pop);
+			//bordercolor
+			var $colorBorderInput = $("#colorborder", $pop);
+			//bordercolor
+			var $colorBgInput = $("#colorbg", $pop);
+			
+			var $ok = $("<button>").html("ok");
+			$popcont.append($ok);
+			//event on choice list
+			$("img.choice").on('click', function() {
+				$('img.yourchoice').attr('src', $(this).attr('src'));
+			});
+			//event on validation
+			$ok.on('click', function(oEvent) {
+				oApplication.command('/upref avatarBorder ' + $colorBorderInput.val());
+				oApplication.command('/upref avatarBg ' + $colorBgInput.val());
+				oApplication.command('/upref avatarColor ' + $colorTextInput.val());
+				oApplication.command('/upref avatarImage ' + $('img.yourchoice', $pop).attr('src'));
+				$pop.fadeOut('fast');
+			});
+			//event on color
+			$colorTextInput.on('input', function(oEvent) {
+				$avatarmessage.css('color', $(oEvent.target).val());
+			});
+			$colorBorderInput.on('input', function(oEvent) {
+				$avatarmessage.css('border-color', $(oEvent.target).val());
+			});
+			$colorBgInput.on('input', function(oEvent) {
+				$avatarmessage.css('background-color', $(oEvent.target).val());
+			});
 			
 			$pop.data('avatarPopup', true);
 		}

@@ -941,3 +941,278 @@ O876 Modulable Server - dev version 2015-02-04
 [2015-12-07T14:26:49.570Z] [T] user "toto" connected
 [2015-12-07T14:26:49.570Z] [T] loading upref: avatarImage
 [2015-12-07T14:26:49.571Z] [T] user "toto" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T14:49:31.884Z] [T] channel "general" created
+[2015-12-07T14:49:31.894Z] server is listening on port 6616...
+[2015-12-07T14:49:41.339Z] [T] access granted for user kenshiro
+[2015-12-07T14:49:41.340Z] [T] user "kenshiro" connected
+[2015-12-07T14:49:41.340Z] [T] loading upref: avatarImage
+[2015-12-07T14:49:41.344Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T14:51:32.730Z] [T] channel "general" created
+[2015-12-07T14:51:32.742Z] server is listening on port 6616...
+[2015-12-07T14:51:39.271Z] [T] access granted for user kenshiro
+[2015-12-07T14:51:39.272Z] [T] user "kenshiro" connected
+[2015-12-07T14:51:39.272Z] [T] loading upref: avatarImage
+[2015-12-07T14:51:39.276Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:00:21.799Z] [T] channel "general" created
+[2015-12-07T15:00:21.812Z] server is listening on port 6616...
+[2015-12-07T15:00:36.376Z] [T] access granted for user kenshiro
+[2015-12-07T15:00:36.377Z] [T] user "kenshiro" connected
+[2015-12-07T15:00:36.378Z] [T] loading upref: avatarImage
+[2015-12-07T15:00:36.381Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:01:36.657Z] [T] channel "general" created
+[2015-12-07T15:01:36.670Z] server is listening on port 6616...
+[2015-12-07T15:01:41.474Z] [T] access granted for user kenshiro
+[2015-12-07T15:01:41.475Z] [T] user "kenshiro" connected
+[2015-12-07T15:01:41.475Z] [T] loading upref: avatarImage
+[2015-12-07T15:01:41.479Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:04:26.112Z] [T] channel "general" created
+[2015-12-07T15:04:26.124Z] server is listening on port 6616...
+[2015-12-07T15:04:32.892Z] [T] access granted for user kenshiro
+[2015-12-07T15:04:32.893Z] [T] user "kenshiro" connected
+[2015-12-07T15:04:32.893Z] [T] loading upref: avatarImage
+[2015-12-07T15:04:32.897Z] [T] user "kenshiro" has joined channel "general"
+<Buffer 2f 74 78 61 74 2f 73 63 72 69 70 74 73 2f 54 78 61 74 2f 61 64 64 6f 6e 73 2f 61 76 61 74 61 72 2f 69 6d 61 67 65 73 2f 31 32 38 5f 64 65 66 61 75 6c ... >
+<Buffer 2f 74 78 61 74 2f 73 63 72 69 70 74 73 2f 54 78 61 74 2f 61 64 64 6f 6e 73 2f 61 76 61 74 61 72 2f 69 6d 61 67 65 73 2f 31 32 38 5f 64 65 66 61 75 6c ... >
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:05:31.243Z] [T] channel "general" created
+[2015-12-07T15:05:31.254Z] server is listening on port 6616...
+[2015-12-07T15:05:38.458Z] [T] access granted for user kenshiro
+[2015-12-07T15:05:38.459Z] [T] user "kenshiro" connected
+[2015-12-07T15:05:38.460Z] [T] loading upref: avatarImage
+[2015-12-07T15:05:38.464Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:06:55.502Z] [T] channel "general" created
+[2015-12-07T15:06:55.514Z] server is listening on port 6616...
+[2015-12-07T15:07:00.167Z] [T] access granted for user kenshiro
+[2015-12-07T15:07:00.167Z] [T] user "kenshiro" connected
+[2015-12-07T15:07:00.168Z] [T] loading upref: avatarImage
+[2015-12-07T15:07:00.172Z] [T] user "kenshiro" has joined channel "general"
+<Buffer 2f 74 78 61 74 2f 73 63 72 69 70 74 73 2f 54 78 61 74 2f 61 64 64 6f 6e 73 2f 61 76 61 74 61 72 2f 69 6d 61 67 65 73 2f 31 32 38 5f 64 65 66 61 75 6c ... >
+<Buffer 2f 74 78 61 74 2f 73 63 72 69 70 74 73 2f 54 78 61 74 2f 61 64 64 6f 6e 73 2f 61 76 61 74 61 72 2f 69 6d 61 67 65 73 2f 31 32 38 5f 64 65 66 61 75 6c ... >
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:08:20.761Z] [T] channel "general" created
+[2015-12-07T15:08:20.773Z] server is listening on port 6616...
+[2015-12-07T15:08:30.038Z] [T] access granted for user kenshiro
+[2015-12-07T15:08:30.039Z] [T] user "kenshiro" connected
+[2015-12-07T15:08:30.040Z] [T] loading upref: avatarImage
+<Buffer 2f 74 78 61 74 2f 73 63 72 69 70 74 73 2f 54 78 61 74 2f 61 64 64 6f 6e 73 2f 61 76 61 74 61 72 2f 69 6d 61 67 65 73 2f 31 32 38 5f 64 65 66 61 75 6c ... >
+[2015-12-07T15:08:30.045Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:08:57.342Z] [T] channel "general" created
+[2015-12-07T15:08:57.354Z] server is listening on port 6616...
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:09:10.221Z] [T] channel "general" created
+[2015-12-07T15:09:10.238Z] server is listening on port 6616...
+[2015-12-07T15:09:17.858Z] [T] access granted for user kenshiro
+[2015-12-07T15:09:17.859Z] [T] user "kenshiro" connected
+[2015-12-07T15:09:17.859Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:09:17.863Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-07T15:11:08.906Z] [T] channel "general" created
+[2015-12-07T15:11:08.919Z] server is listening on port 6616...
+[2015-12-07T15:11:17.246Z] [T] access granted for user kenshiro
+[2015-12-07T15:11:17.247Z] [T] user "kenshiro" connected
+[2015-12-07T15:11:17.247Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:11:17.252Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:12:08.505Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:12:08.506Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:12:08.507Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:12:11.516Z] [T] access granted for user kenshiro
+[2015-12-07T15:12:11.516Z] [T] user "kenshiro" connected
+[2015-12-07T15:12:11.516Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:12:11.517Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:15:23.696Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:15:23.696Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:15:23.698Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:15:27.324Z] [T] access granted for user kenshiro
+[2015-12-07T15:15:27.324Z] [T] user "kenshiro" connected
+[2015-12-07T15:15:27.324Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:15:27.325Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:15:52.751Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:15:52.751Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:15:52.752Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:15:57.515Z] [T] access granted for user kenshiro
+[2015-12-07T15:15:57.516Z] [T] user "kenshiro" connected
+[2015-12-07T15:15:57.516Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:15:57.518Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:16:12.208Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:16:12.208Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:16:12.208Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:16:15.035Z] [T] access granted for user kenshiro
+[2015-12-07T15:16:15.035Z] [T] user "kenshiro" connected
+[2015-12-07T15:16:15.036Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:16:15.036Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:16:32.113Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:16:32.113Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:16:32.113Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:18:36.470Z] [T] access granted for user kenshiro
+[2015-12-07T15:18:36.470Z] [T] user "kenshiro" connected
+[2015-12-07T15:18:36.471Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:18:36.471Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:21:51.395Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:21:51.395Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:21:51.395Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:21:55.407Z] [T] access granted for user kenshiro
+[2015-12-07T15:21:55.408Z] [T] user "kenshiro" connected
+[2015-12-07T15:21:55.408Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:21:55.409Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:24:58.062Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:24:58.062Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:24:58.062Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:25:02.025Z] [T] access granted for user kenshiro
+[2015-12-07T15:25:02.026Z] [T] user "kenshiro" connected
+[2015-12-07T15:25:02.026Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:25:02.027Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:26:39.115Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:26:39.116Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:26:39.116Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:26:43.189Z] [T] access granted for user kenshiro
+[2015-12-07T15:26:43.190Z] [T] user "kenshiro" connected
+[2015-12-07T15:26:43.190Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:26:43.191Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:28:11.285Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:28:11.285Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:28:11.285Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:28:15.219Z] [T] access granted for user kenshiro
+[2015-12-07T15:28:15.219Z] [T] user "kenshiro" connected
+[2015-12-07T15:28:15.219Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:28:15.220Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:29:09.411Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:29:09.411Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:29:09.411Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:29:12.945Z] [T] access granted for user kenshiro
+[2015-12-07T15:29:12.945Z] [T] user "kenshiro" connected
+[2015-12-07T15:29:12.946Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:29:12.946Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:30:14.210Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:30:14.210Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:30:14.210Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:30:17.614Z] [T] access granted for user kenshiro
+[2015-12-07T15:30:17.614Z] [T] user "kenshiro" connected
+[2015-12-07T15:30:17.614Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:30:17.614Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:31:05.616Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:31:05.616Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:31:05.616Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:31:10.140Z] [T] access granted for user kenshiro
+[2015-12-07T15:31:10.140Z] [T] user "kenshiro" connected
+[2015-12-07T15:31:10.141Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:31:10.142Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:32:06.609Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:32:06.609Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:32:06.609Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:32:08.971Z] [T] access granted for user kenshiro
+[2015-12-07T15:32:08.971Z] [T] user "kenshiro" connected
+[2015-12-07T15:32:08.973Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:32:08.974Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-07T15:33:55.513Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:33:55.513Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:33:55.514Z] [T] user "kenshiro" disconnected
+[2015-12-07T15:33:59.798Z] [T] access granted for user kenshiro
+[2015-12-07T15:33:59.799Z] [T] user "kenshiro" connected
+[2015-12-07T15:33:59.799Z] [T] loading upref: avatarImage
+/txat/scripts/Txat/addons/avatar/images/128_default/2.png
+[2015-12-07T15:33:59.800Z] [T] user "kenshiro" has joined channel "general"
+/txat/scripts/Txat/addons/avatar/images/128_default/default.png
+[2015-12-07T15:35:29.796Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-07T15:35:29.796Z] [T] user "kenshiro" has left channel "general"
+[2015-12-07T15:35:29.796Z] [T] user "kenshiro" disconnected
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-08T11:17:58.502Z] [T] channel "general" created
+[2015-12-08T11:17:58.537Z] server is listening on port 6616...
+[2015-12-08T11:18:18.648Z] [T] access granted for user kenshiro
+[2015-12-08T11:18:18.649Z] [T] user "kenshiro" connected
+[2015-12-08T11:18:18.650Z] [T] loading upref: avatarImage
+[2015-12-08T11:18:18.667Z] [T] user "kenshiro" has joined channel "general"
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-08T11:39:11.176Z] [T] channel "general" created
+[2015-12-08T11:39:11.188Z] server is listening on port 6616...
+[2015-12-08T11:39:16.054Z] [T] access granted for user toto
+[2015-12-08T11:39:16.055Z] [T] user "toto" connected
+[2015-12-08T11:39:16.055Z] [T] loading upref: avatarImage
+[2015-12-08T11:39:16.072Z] [T] user "toto" has joined channel "general"
+[2015-12-08T11:40:21.485Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-08T11:40:21.486Z] [T] user "toto" has left channel "general"
+[2015-12-08T11:40:21.486Z] [T] user "toto" disconnected
+[2015-12-08T11:40:23.818Z] [T] access granted for user toto
+[2015-12-08T11:40:23.819Z] [T] user "toto" connected
+[2015-12-08T11:40:23.819Z] [T] loading upref: avatarImage
+[2015-12-08T11:40:23.820Z] [T] user "toto" has joined channel "general"
+#d2c0c0
+#9b8c8c
+#f01717
+/txat/scripts/Txat/addons/avatar/images/128_default/1.png
+[2015-12-08T11:41:12.345Z] [T] access granted for user kenshiro
+[2015-12-08T11:41:12.345Z] [T] user "kenshiro" connected
+[2015-12-08T11:41:12.346Z] [T] loading upref: avatarImage
+[2015-12-08T11:41:12.346Z] [T] user "kenshiro" has joined channel "general"
+#2972cc
+#aeedf4
+#f21414
+/txat/scripts/Txat/addons/avatar/images/128_default/7.png
+[2015-12-08T11:42:55.531Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-08T11:42:55.531Z] [T] user "kenshiro" has left channel "general"
+[2015-12-08T11:42:55.534Z] [T] user "kenshiro" disconnected
+[2015-12-08T11:44:02.404Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-08T11:44:02.404Z] [T] user "toto" has left channel "general"
+[2015-12-08T11:44:02.406Z] [T] user "toto" disconnected
+[2015-12-08T11:44:05.830Z] [T] access granted for user kenshiro
+[2015-12-08T11:44:05.830Z] [T] user "kenshiro" connected
+[2015-12-08T11:44:05.831Z] [T] loading upref: avatarBg, avatarBorder, avatarColor, avatarImage
+[2015-12-08T11:44:05.832Z] [T] user "kenshiro" has joined channel "general"
+[2015-12-08T11:44:17.589Z] [T] client disconnected: ::ffff:127.0.0.1
+[2015-12-08T11:44:17.589Z] [T] user "kenshiro" has left channel "general"
+[2015-12-08T11:44:17.589Z] [T] user "kenshiro" disconnected
+[2015-12-08T11:44:20.514Z] [T] access granted for user marcel
+[2015-12-08T11:44:20.514Z] [T] user "marcel" connected
+[2015-12-08T11:44:20.514Z] [T] upref.storage/marcel : not found
+[2015-12-08T11:44:20.527Z] [T] user "marcel" has joined channel "general"
+setting scripts/Txat/addons/avatar/images/128_default/default.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-08T11:44:29.506Z] [T] channel "general" created
+[2015-12-08T11:44:29.519Z] server is listening on port 6616...
+[2015-12-08T11:44:34.828Z] [T] access granted for user marcel
+[2015-12-08T11:44:34.829Z] [T] user "marcel" connected
+[2015-12-08T11:44:34.830Z] [T] loading upref: 
+[2015-12-08T11:44:34.833Z] [T] user "marcel" has joined channel "general"
+setting scripts/Txat/addons/avatar/images/128_default/default.png

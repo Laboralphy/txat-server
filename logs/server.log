@@ -1216,3 +1216,33 @@ O876 Modulable Server - dev version 2015-02-04
 [2015-12-08T11:44:34.830Z] [T] loading upref: 
 [2015-12-08T11:44:34.833Z] [T] user "marcel" has joined channel "general"
 setting scripts/Txat/addons/avatar/images/128_default/default.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-08T14:32:16.302Z] [T] channel "general" created
+[2015-12-08T14:32:16.341Z] server is listening on port 6616...
+[2015-12-08T14:32:39.801Z] [T] access denied for user ralphy : invalid password
+[2015-12-08T14:32:48.385Z] [T] access granted for user ralphy
+[2015-12-08T14:32:48.386Z] [T] user "ralphy" connected
+[2015-12-08T14:32:48.387Z] [T] loading upref: yoyo
+[2015-12-08T14:32:48.411Z] [T] user "ralphy" has joined channel "general"
+setting scripts/Txat/addons/avatar/images/128_default/default.png
+#154d47
+#ffbebe
+#c90000
+/txat/scripts/Txat/addons/avatar/images/128_default/7.png
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-08T15:28:13.034Z] [T] channel "general" created
+[2015-12-08T15:28:13.046Z] server is listening on port 6616...
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-08T15:28:58.168Z] [T] channel "general" created
+[2015-12-08T15:28:58.179Z] server is listening on port 6616...
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-08T15:29:22.943Z] [T] channel "general" created
+[2015-12-08T15:29:22.955Z] server is listening on port 6616...
+[2015-12-08T15:29:29.601Z] [T] access granted for user ralphy
+[2015-12-08T15:29:29.602Z] [T] user "ralphy" connected
+[2015-12-08T15:29:29.602Z] [T] loading upref: avatarBg, avatarBorder, avatarColor, avatarImage, yoyo
+[2015-12-08T15:29:29.606Z] [T] user "ralphy" has joined channel "general"

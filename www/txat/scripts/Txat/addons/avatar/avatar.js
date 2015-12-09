@@ -1,17 +1,22 @@
 $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	var PATH_IMAGES = "/txat/scripts/Txat/addons/avatar/images/avatar/";
 	var PATH_DEFAULT = "/txat/scripts/Txat/addons/avatar/images/128_default/";
+	var CHANGING_MSG = "...is changing avatar...";
 	var TAG_START = '{{avatar ';
 	var TAG_END = '}}';
 //	var $textarea; // dans lequel sera collé le code source
 	
-	oView.on('chatItemAppended', function(data) {
-//		console.log("chatitem", data);
+	var oPrefs = null;
+	/**
+	 * on new message
+	 */
+	oView.on('chatItemAppended', (function(data) {
 		var $item = $(data.o);
 		$item.addClass('avatarMessage');
 		var $username = $('span.username', $item);
 		var $usermessage = $('span.usermessage', $item);
 		if ($usermessage.length > 0) {
+			$item.addClass('avatarMessage');
 			//var usernick = $('span.username', $item).html().replace(':', '');
 			//$item.append("<br/>");
 			var $img = $('<img/>');
@@ -23,15 +28,34 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				color: data.avatar.color,
 				backgroundColor: data.avatar.bg,
 				borderColor:data.avatar.border
-			})
+			});
+			oPrefs = data.avatar;
+//			console.log($usermessage.val(),CHANGING_MSG,$username.val() ,oApplication.getUserName());
+//			if($usermessage.val() == CHANGING_MSG && $username.val() == oApplication.getName()) {
+//				avatarPopup();
+//			}
 		}
+	}).bind(this));
+
+	// créer une nouvelle commande /code
+	oApplication.defineCommand('avatar', function() {
+		//envoi d'un text bidon sur le txat, et permet de récupérer déjà les prefs
+		//:astuce en attente ralphy"
+//		if(!("prefs" in oApplication)) {
+//			oApplication.command("...is changing his face");
+//		} else {
+			avatarPopup();
+//		}
 		
 	});
 	
-	// créer une nouvelle commande /code
-	oApplication.defineCommand('avatar', function() {
+	
+	oApplication.on('channelArrival', function(data) {
+//		console.log(data);
+	});
+	
+	var avatarPopup = function() {
 		var $pop = oView.getPopup('avatarPopup', 'Choose your dirty face !');
-		
 		if (!$pop.data('avatarPopup')) { // pour ne pas refaire deux fois le même code
 			$pop.addClass('p640').addClass('avatarpop');
 			var $popcont = $('div.content', $pop); 
@@ -63,9 +87,9 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				+ '<img src="/txat/scripts/Txat/addons/avatar/images/128_default/default.png" class="avatarItem yourchoice">'
 				+'<span class="nick">'+ oApplication.getUserName() + ':</span>'
 				+'<span class="usermessage">your message</span><br></div>'
-				+'<input id="color" type="color" placeholder="text color"/>'
-				+'<input id="colorborder" type="color" placeholder="border color"/>'
-				+'<input id="colorbg" type="color" placeholder="background color"/>'
+				+'<input id="color" type="color" title="text color"/>'
+				+'<input id="colorborder" type="color" title="border color"/>'
+				+'<input id="colorbg" type="color" title="background color"/>'
 				);
 			
 			$popcont.append($example);
@@ -73,11 +97,14 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			var $avatarmessage = $("div.avatarExample");
 			
 			//textcolor
-			var $colorTextInput = $("#color", $pop);
+			var $colorTextInput = $("#color", $pop).val(oPrefs.color);
+			
 			//bordercolor
-			var $colorBorderInput = $("#colorborder", $pop);
+			var $colorBorderInput = $("#colorborder", $pop).val(oPrefs.border);
 			//bordercolor
-			var $colorBgInput = $("#colorbg", $pop);
+			var $colorBgInput = $("#colorbg", $pop).val(oPrefs.bg);
+			//image
+			var $imgAvatar = $("img.avatarItem", $example).attr("src", oPrefs.image);
 			
 			var $ok = $("<button>").html("ok");
 			$popcont.append($ok);
@@ -107,14 +134,5 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			$pop.data('avatarPopup', true);
 		}
 		$pop.fadeIn('fast');
-	});
-	
-	
-	oApplication.on('channelArrival', function(data) {
-		var sUserName = oApplication.getUserName();
-//		if (data.u == oApplication.getUserName()) {
-//			oView.openTab(data.c);
-//		}
-//		oView.userArrival(data.u, data.c);
-	});
+	}
 });

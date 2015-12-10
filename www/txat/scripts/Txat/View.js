@@ -286,6 +286,27 @@ O2.createClass('TXAT.View', {
 	},
 	
 	/**
+	 * Affichage d'un popup d'aide
+	 * @param oContext contenu du popup : chaque entrée associe 'nom-de-commande' avec le contenue de l'aide de la commande
+	 */
+	viewHelp: function(oContext) {
+		$('div.popup:visible').hide();
+		var $popup = this.getPopup('help', 'Help');
+		$popup.addClass('help p640');
+		var $popupContent = $('div.content', $popup);
+		$popupContent.empty();
+		var $dl = $('<dl></dl>');
+		var $dt, $dd;
+		for (var sHelp in oContext) {
+			$dt = $('<dt>' + sHelp + '</dt>');
+			$dd = $('<dd>' + oContext[sHelp] + '</dd>');
+			$dl.append($dt).append($dd);
+		}
+		$popupContent.append($dl);
+		$popup.fadeIn('fast');
+	},
+	
+	/**
 	 * Afficahge de vue !
 	 * Vue de la liste des canaux créés sur le serveur
 	 * @param array aList liste des canaux recu précédement

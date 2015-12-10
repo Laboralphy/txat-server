@@ -192,6 +192,15 @@ O2.createClass('TXAT.Application', {
 	
 	cmd_passwd: function(sParam) {
 		this.sendTxat('T_PASSWD', {p: sParam});
+	},
+	
+	cmd_help: function(sParam) {
+		var oHelpContext = {};
+		for (var h in TXAT.HELP.FR) {
+			oHelpContext[h] = TXAT.HELP.FR[h];
+		}
+		this.trigger('help', oHelpContext);
+		this.trigger('viewHelp', oHelpContext);
 	}
 });
 

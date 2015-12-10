@@ -28,6 +28,10 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		
 	});
 	
+	oApplication.on('help', function(oCtx) {
+		oCtx.avatar = 'Permet d\'afficher le popup de sélection d\'avatar.';
+	});
+	
 	// créer une nouvelle commande /code
 	oApplication.defineCommand('avatar', function() {
 		var $pop = oView.getPopup('avatarPopup', 'Choose your dirty face !');

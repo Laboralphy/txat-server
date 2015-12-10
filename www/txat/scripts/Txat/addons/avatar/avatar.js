@@ -1,22 +1,17 @@
 $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	var PATH_IMAGES = "/txat/scripts/Txat/addons/avatar/images/avatar/";
 	var PATH_DEFAULT = "/txat/scripts/Txat/addons/avatar/images/128_default/";
-	var CHANGING_MSG = "...is changing avatar...";
 	var TAG_START = '{{avatar ';
 	var TAG_END = '}}';
 //	var $textarea; // dans lequel sera collé le code source
 	
-	var oPrefs = null;
-	/**
-	 * on new message
-	 */
-	oView.on('chatItemAppended', (function(data) {
+	oView.on('chatItemAppended', function(data) {
+//		console.log("chatitem", data);
 		var $item = $(data.o);
 		$item.addClass('avatarMessage');
 		var $username = $('span.username', $item);
 		var $usermessage = $('span.usermessage', $item);
 		if ($usermessage.length > 0) {
-			$item.addClass('avatarMessage');
 			//var usernick = $('span.username', $item).html().replace(':', '');
 			//$item.append("<br/>");
 			var $img = $('<img/>');
@@ -35,18 +30,11 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 //				avatarPopup();
 //			}
 		}
-	}).bind(this));
+	});
 
 	// créer une nouvelle commande /code
 	oApplication.defineCommand('avatar', function() {
-		//envoi d'un text bidon sur le txat, et permet de récupérer déjà les prefs
-		//:astuce en attente ralphy"
-//		if(!("prefs" in oApplication)) {
-//			oApplication.command("...is changing his face");
-//		} else {
 			avatarPopup();
-//		}
-		
 	});
 	
 	

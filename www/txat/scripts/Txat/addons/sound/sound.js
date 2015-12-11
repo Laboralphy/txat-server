@@ -36,7 +36,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
         // Intercepte le message pour lancer le son
         oApplication.on('chatMessage', function(data) {   
 
-            if (data.u == oApplication.sMe) { 
+            if (data.u != oApplication.sMe) { 
 
                 if (sSoundStatus === 'activé') {                            
                     if (!$('#player')[0]) { 

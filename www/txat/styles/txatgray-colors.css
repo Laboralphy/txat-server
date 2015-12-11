@@ -21,7 +21,7 @@ div.window, div.popup {
 	border-color: #666;
 }
 
-#userZone div.user: {
+#userZone div.user {
 	cursor: pointer;
 }
 
@@ -92,7 +92,7 @@ div.popup .close:hover {
 }
 
 #channelList div.content {
-	border-color #BBB;
+	border-color: #BBB;
 	background-color: #BBB;
 }
 

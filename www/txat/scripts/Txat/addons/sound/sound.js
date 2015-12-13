@@ -116,8 +116,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				addSoundBody("game-over.wav", ID_PLAY_SOUND_GAMEOVER);
 				playSound(ID_PLAY_SOUND_GAMEOVER);				
 			break;
-			default:
-			console.log(data);
+			default:			
 				oView.appendChatItem(null, 'Commande /sound [option]{on,off,status,test,add \'url\'}', jsonStyle);
 			break;
 		}              

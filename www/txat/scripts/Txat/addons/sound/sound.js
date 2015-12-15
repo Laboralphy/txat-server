@@ -9,8 +9,10 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	// Active le son par défaut	
     var sSoundStatus = 'activé'; 	
 	
-	// Lance la fonction qui génère la balise audio 
+	// Lance la fonction qui génère la balise audio pour le son par défaut
 	addSoundBody();
+	// Lance la fonction qui génère la balise audio pour gameover
+	addSoundBody("game-over.wav", ID_PLAY_SOUND_GAMEOVER);
 	  
 	/** 
 	 * Fonction qui permet d'ajouter la balise audio à la fin du body
@@ -112,8 +114,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				}							
 			break;
 			case 'gameover':
-				oView.appendChatItem(null, 'Game-Over !', jsonStyle);					
-				addSoundBody("game-over.wav", ID_PLAY_SOUND_GAMEOVER);
+				oView.appendChatItem(null, 'Game-Over !', jsonStyle);
 				playSound(ID_PLAY_SOUND_GAMEOVER);				
 			break;
 			default:			
@@ -124,8 +125,11 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
           
 	// Intercepte le message pour lancer le son
 	oApplication.on('chatMessage', function(data) { 
-		if (data.u != oApplication.sMe && sSoundStatus === 'activé') {           
-			playSound();     
+		if (data.m == '!gameover') {
+			$('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
+		    playSound(ID_PLAY_SOUND_GAMEOVER);
+		}else if (data.u != oApplication.sMe && sSoundStatus === 'activé') {           				
+		    playSound();   				  
 		}                  
 	});                 
 });

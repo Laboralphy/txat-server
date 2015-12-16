@@ -2,7 +2,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
       
 	// Constantes pour l'addon_sound
 	var ID_PLAY_SOUND = 'playSound';
-	var ID_PLAY_SOUND_GAMEOVER = 'gameover';
+	var ID_PLAY_SOUND_OTHER = 'other';
 	var URL_SOUND = 'scripts/Txat/addons/sound/sons/';
 	var SOUND_DEFAULT = 'default.mp3';
 		
@@ -12,7 +12,8 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	// Lance la fonction qui génère la balise audio pour le son par défaut
 	addSoundBody();
 	// Lance la fonction qui génère la balise audio pour gameover
-	addSoundBody("game-over.wav", ID_PLAY_SOUND_GAMEOVER);
+	addSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+
 	  
 	/** 
 	 * Fonction qui permet d'ajouter la balise audio à la fin du body
@@ -34,9 +35,10 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 * @param string file : fichier de l'audio
 	 * @param string urlSound : url du fichier audio
 	 */
-	function updateSoundBody(file, urlSound) {		
-		urlSound = typeof urlSound !== 'undefined' ? urlSound : URL_SOUND;			
-		$('#' + ID_PLAY_SOUND).attr('src', urlSound + file);		
+	function updateSoundBody(file, idSound, urlSound) {		
+		urlSound = typeof urlSound !== 'undefined' ? urlSound : URL_SOUND;	
+		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;			
+		$('#' + idSound).attr('src', urlSound + file);		
 	}
 	
 	/** 
@@ -108,14 +110,14 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				if (typeof aData[1] === 'undefined') {
 					oView.appendChatItem(null, 'Paramètre manquant : url !', jsonStyle);
 				} else {
-					oView.appendChatItem(null, 'Activation du son personnalisé', jsonStyle);					
-					updateSoundBody(aData[1].replace(/'/g, ""), "");
+					oView.appendChatItem(null, 'Activation du son personnalisé', jsonStyle);									
+					updateSoundBody(aData[1].replace(/'/g, ""),ID_PLAY_SOUND, "");
 					playSound();
 				}							
 			break;
 			case 'gameover':
 				oView.appendChatItem(null, 'Game-Over !', jsonStyle);
-				playSound(ID_PLAY_SOUND_GAMEOVER);				
+				playSound(ID_PLAY_SOUND_OTHER);				
 			break;
 			default:			
 				oView.appendChatItem(null, 'Commande /sound [option]{on,off,status,test,add \'url\'}', jsonStyle);
@@ -126,8 +128,12 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	// Intercepte le message pour lancer le son
 	oApplication.on('chatMessage', function(data) { 
 		if (data.m == '!gameover') {
-			$('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
-		    playSound(ID_PLAY_SOUND_GAMEOVER);
+		    updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+		    $('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
+		    playSound(ID_PLAY_SOUND_OTHER);
+		}else if( data.m == '!starwars') {
+		    updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);	
+		    playSound(ID_PLAY_SOUND_OTHER);
 		}else if (data.u != oApplication.sMe && sSoundStatus === 'activé') {           				
 		    playSound();   				  
 		}                  

@@ -37,7 +37,9 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
       var $usermessage = $('span.usermessage', $item);
       if ($usermessage.length > 0) {
          var sContent = $usermessage.text();
-         
+         if(data.history.user == oApplication.getUserName()) {
+            oHistorymanager.saveMessage(sContent);
+         }
       }
    });
 

@@ -27,6 +27,7 @@ O2.createClass('TXAT.View', {
 	 * Affecte certaines propriétés
 	 */
 	__construct: function() {
+		this.bScrollLock = false;
 		this.sTitle = document.title;
 		this.oEvents = {};
 		this.oUsers = {};
@@ -36,15 +37,20 @@ O2.createClass('TXAT.View', {
 		this.oChanDiv = $('#channelZone').get(0);
 		this.oPopups = {};
 	},
+	
+	scrollDown: function() {
+		if (!this.bScrollLock) {
+			var $d = $('div.message:last', this.oChatDiv);
+			if ($d.length) {
+				var d = $d.get(0);
+				d.scrollIntoView();
+			}
+		}
+	},
 
 	setScrollLock: function(b) {
 		this.bScrollLock = b;
-		if (!b) {
-			var $d = $('div.message:last', this.oChatDiv);
-			if ($d.length) {
-				$d.get(0).scrollIntoView();
-			}
-		}
+		this.scrollDown();
 	},
 
 	/**
@@ -103,19 +109,26 @@ O2.createClass('TXAT.View', {
 		if (oStyle) {
 			$stuff.css(oStyle);
 		}
+		if (!sTab && sTab !== 0) {
+			sTab = this.sTab;
+		}
 		if (sTab == this.sTab) {
 			$chat.append($stuff);
-			if (!this.bScrollLock) {
-				$stuff.get(0).scrollIntoView();
-			}
 		} else {
 			this.setTabClass(sTab, 'highlighted');
 		}
-		this.trigger('chatItemAppended', {t: sTab, o:$stuff.get(0), s:sContent, d: oData});
+		if (!oData) {
+			oData = {};
+		}
+		oData.s = sContent;
+		oData.o = $stuff.get(0);
+		oData.t = sTab;
+		this.trigger('chatItemAppended', oData);
 		this.oTabs[sTab].push($stuff.get(0));
 		while (this.oTabs[sTab].length > this.MAX_CHANNEL_MESSAGE_COUNT) {
 			$(this.oTabs[sTab].shift()).remove();
 		}
+		this.scrollDown();
 		return $stuff;
 	},
 
@@ -139,10 +152,7 @@ O2.createClass('TXAT.View', {
 			$chat.append(o);
 		});
 		this.trigger('chatContentChanged', {o:this.oChatDiv});
-		var d = $('div.message:last', this.oChatDiv).get(0);
-		if (d) {
-			d.scrollIntoView();
-		}
+		this.scrollDown();
 	},
 	
 
@@ -276,6 +286,27 @@ O2.createClass('TXAT.View', {
 	},
 	
 	/**
+	 * Affichage d'un popup d'aide
+	 * @param oContext contenu du popup : chaque entrée associe 'nom-de-commande' avec le contenue de l'aide de la commande
+	 */
+	viewHelp: function(oContext) {
+		$('div.popup:visible').hide();
+		var $popup = this.getPopup('help', 'Help');
+		$popup.addClass('help p640');
+		var $popupContent = $('div.content', $popup);
+		$popupContent.empty();
+		var $dl = $('<dl></dl>');
+		var $dt, $dd;
+		for (var sHelp in oContext) {
+			$dt = $('<dt>' + sHelp + '</dt>');
+			$dd = $('<dd>' + oContext[sHelp] + '</dd>');
+			$dl.append($dt).append($dd);
+		}
+		$popupContent.append($dl);
+		$popup.fadeIn('fast');
+	},
+	
+	/**
 	 * Afficahge de vue !
 	 * Vue de la liste des canaux créés sur le serveur
 	 * @param array aList liste des canaux recu précédement
@@ -334,7 +365,7 @@ O2.createClass('TXAT.View', {
 		} else {
 			document.title = this.sMessageIcon + ' - ' + this.sTitle;
 		}
-		var s = '<span class="nick">' + sUser + ':</span><span class="usermessage">' + this.escapeHTMLEntities(sMessage) + '</span>';
+		var s = '<span class="username">' + sUser + '</span><span class="separator">:</span><span class="usermessage">' + this.escapeHTMLEntities(sMessage) + '</span>';
 		this.appendChatItem(sTab, s, null, data);
 	},
 

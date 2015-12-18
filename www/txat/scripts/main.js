@@ -128,7 +128,6 @@ function startTxatApplication() {
 					data.cancel = true; // annulation du reste de la commande
 				}
 			break;
-				
 		}
 	});
 
@@ -267,6 +266,9 @@ function startTxatApplication() {
 		oView.appendChatItem(data.c, data.m, {'font-style': 'italic', 'color': '#008'});
 	});
 
+	oApplication.on('viewHelp', function(data) {
+		oView.viewHelp(data);
+	});
 
 
 

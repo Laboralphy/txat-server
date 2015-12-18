@@ -53,7 +53,11 @@ table.chat td.chat {
 	margin-left: 4px;
 }
 
-#chatZone div.message span.nick {
+#chatZone div.message span.username {
+	font-weight: bold;
+}
+
+#chatZone div.message span.separator {
 	font-weight: bold;
 	padding-right: 8px;
 }
@@ -149,6 +153,12 @@ div.input input {
 	padding: 8px;
 }
 
+div.popup.help dl {
+	max-height: 320px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
 div.popup .close {
 	font-size: 200%;
 	cursor: pointer;
@@ -229,6 +239,8 @@ div.popup div.title {
 #logoWindow div.loginFields div.cbPassw {
 	vertical-align: bottom;
 }
+
+
 
 /*
 #iconZone {

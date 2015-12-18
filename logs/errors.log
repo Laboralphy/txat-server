@@ -66,3 +66,40 @@ fs.js:60
 
 Error: ENOENT: no such file or directory, open 'www/txat/scripts/Txat/addons/avatar/images/avatars/enshiro/6.png'
     at Error (native)
+-------------------------------------------------
+vendredi 18 décembre 2015, 14:54:44 (UTC+0100)
+[2015-12-18T13:54:31.609Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/0.png
+[2015-12-18T13:54:31.611Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/1.png
+[2015-12-18T13:54:31.613Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/2.png
+[2015-12-18T13:54:31.615Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/3.png
+[2015-12-18T13:54:31.616Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/4.png
+[2015-12-18T13:54:31.617Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/5.png
+[2015-12-18T13:54:31.618Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/6.png
+[2015-12-18T13:54:31.618Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/7.png
+[2015-12-18T13:54:31.619Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/8.png
+[2015-12-18T13:54:31.621Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/9.png
+[2015-12-18T13:54:31.623Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/10.png
+[2015-12-18T13:54:31.623Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/11.png
+[2015-12-18T13:54:31.624Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/12.png
+[2015-12-18T13:54:31.625Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/13.png
+[2015-12-18T13:54:31.626Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/14.png
+[2015-12-18T13:54:31.629Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/15.png
+[2015-12-18T13:54:31.629Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/16.png
+[2015-12-18T13:54:31.630Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/17.png
+[2015-12-18T13:54:31.630Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/18.png
+[2015-12-18T13:54:31.631Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/19.png
+[2015-12-18T13:54:31.631Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/20.png
+[2015-12-18T13:54:31.636Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/21.png
+[2015-12-18T13:54:31.637Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/22.png
+[2015-12-18T13:54:31.637Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/23.png
+[2015-12-18T13:54:31.638Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/24.png
+[2015-12-18T13:54:31.638Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/25.png
+[2015-12-18T13:54:31.639Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/26.png
+[2015-12-18T13:54:31.640Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/27.png
+[2015-12-18T13:54:31.641Z] http error 404 - Not found : /txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/28.png
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: ENOENT: no such file or directory, open 'www/txat/scripts/Txat/addons/avatar/images/avatars/kenshiro/29.png'
+    at Error (native)

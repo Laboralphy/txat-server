@@ -3682,3 +3682,34 @@ image 	PNG
 {"image":27,"extension":"png","color":"#345693","bg":"#dcc1d2","border":"#9896dd","user":"kenshiro","version":1,"data":false}
 path image
 {"image":28,"extension":"png","color":"#345693","bg":"#dcc1d2","border":"#9896dd","user":"kenshiro","version":1,"data":false}
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-18T13:54:22.769Z] [T] channel "general" created
+[2015-12-18T13:54:22.781Z] server is listening on port 6616...
+[2015-12-18T13:54:27.351Z] [T] access granted for user kenshiro
+[2015-12-18T13:54:27.351Z] [T] user "kenshiro" connected
+[2015-12-18T13:54:27.352Z] [T] loading upref: avatar, avatarBg, avatarBorder, avatarColor, avatarImage
+[2015-12-18T13:54:27.356Z] [T] user "kenshiro" has joined channel "general"
+path image
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-18T13:55:15.017Z] [T] channel "general" created
+[2015-12-18T13:55:15.029Z] server is listening on port 6616...
+[2015-12-18T13:55:21.860Z] [T] access granted for user kenshiro
+[2015-12-18T13:55:21.861Z] [T] user "kenshiro" connected
+[2015-12-18T13:55:21.862Z] [T] loading upref: avatar, avatarBg, avatarBorder, avatarColor, avatarImage
+[2015-12-18T13:55:21.866Z] [T] user "kenshiro" has joined channel "general"
+{"image":0,"extension":"png","color":"#a46e6e","bg":"#000000","border":"#f14242","user":"kenshiro","version":1,"data":false}
+path image
+-------------------------------------------------
+O876 Modulable Server - dev version 2015-02-04
+[2015-12-18T13:57:51.703Z] [T] channel "general" created
+[2015-12-18T13:57:51.715Z] server is listening on port 6616...
+[2015-12-18T13:57:55.261Z] [T] access granted for user sftu
+[2015-12-18T13:57:55.261Z] [T] user "sftu" connected
+[2015-12-18T13:57:55.262Z] [T] upref.storage/sftu : not found
+[2015-12-18T13:57:55.265Z] [T] user "sftu" has joined channel "general"
+{"image":0,"extension":"png","color":"#000000","bg":"#ffffff","border":"#000000","user":"sftu","data":false}
+{"image":0,"extension":"png","color":"#000000","bg":"#ffffff","border":"#000000","user":"sftu","data":false}
+path image
+{"image":29,"extension":"png","color":"#000000","bg":"#ffffff","border":"#000000","user":"sftu","version":1,"data":false}

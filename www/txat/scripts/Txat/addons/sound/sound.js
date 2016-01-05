@@ -137,6 +137,33 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			break;
 		}              
 	});     
+
+	
+	/**
+	 * Animation : Secoue l'élément HTML spécifié
+	 * @param oObject élément du DOM à secouer
+	 * @param nAmp amplitude en pixels
+	 * @param fPuls vitesse 
+	 * @param fDim Amortissement de la pulsation (1 = pas d'amorti);
+	 */
+	function wizz(oObject, nAmp, fPuls, fDim) {
+		var oTimer;
+		var nTimer = 0;
+		fDim = Math.min(0.99, Math.max(0, fDim));
+
+		function littleAnimation() {
+			var x = nAmp * Math.sin(fPuls * nTimer);
+			nAmp = (fDim * nAmp) | 0;
+			oObject.style.transform = 'translateX(' + x.toString() + 'px)';
+			++nTimer;
+			if (nAmp === 0) {
+				clearInterval(oTimer);
+				oObject.style.transform = '';
+			}
+		}
+		oTimer = setInterval(littleAnimation, 32);
+		oObject.parentNode.style.overflow = 'hidden';
+	}
           
 	// Intercepte le message pour lancer le son
 	oApplication.on('chatMessage', function(data) { 
@@ -144,8 +171,12 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		    updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
 		    $('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
 		    playSound(ID_PLAY_SOUND_OTHER);
-		}else if( data.m == '!starwars') {
-		    updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);	
+		}else if(data.m == '!starwars') {
+		    updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);		   
+		    playSound(ID_PLAY_SOUND_OTHER);
+		}else if (data.m == 'wizz') {
+ 		    updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
+		    wizz(document.body, 16, 2, 0.95);
 		    playSound(ID_PLAY_SOUND_OTHER);
 		}else if (data.u != oApplication.sMe && sSoundStatus === 'activé') {           				
 		    playSound();   				  

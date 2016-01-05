@@ -5,25 +5,16 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	var ID_PLAY_SOUND_OTHER = 'other';
 	var URL_SOUND = 'scripts/Txat/addons/sound/sons/';
 	var SOUND_DEFAULT = 'default.mp3';
-	
-	// Récupère le son personnalisé de l'utilisateur
-	var soundPerso = localStorage.getItem('txat_sound'); 
 		
 	// Active le son par défaut	
-    	var sSoundStatus = 'activé'; 	
+    var sSoundStatus = 'activé'; 	
 	
-	if (soundPerso != null) {
-		// Lance la fonction qui génère la balise audio pour le son personnalisé
-        	addSoundBody(soundPerso, ID_PLAY_SOUND, "");
-	} else {
-		// Lance la fonction qui génère la balise audio pour le son par défaut
-		addSoundBody();
-	}
-
+	// Lance la fonction qui génère la balise audio pour le son par défaut
+	addSoundBody();
 	// Lance la fonction qui génère la balise audio pour gameover
 	addSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
 
-	
+	  
 	/** 
 	 * Fonction qui permet d'ajouter la balise audio à la fin du body
 	 * 
@@ -59,8 +50,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;
 		document.querySelector('#' + idSound).play();
 		
-	}
-
+	}			
 
 	/* ********************************************************** *
 	 * Création de la commande /sound avec gestions des options : *
@@ -120,11 +110,8 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				if (typeof aData[1] === 'undefined') {
 					oView.appendChatItem(null, 'Paramètre manquant : url !', jsonStyle);
 				} else {
-					var fileAudio = aData[1].replace(/'/g, "");
-					oView.appendChatItem(null, 'Activation du son personnalisé', jsonStyle);						
-					updateSoundBody(fileAudio,ID_PLAY_SOUND, "");
-					//oApplication.command('/upref sound ' + fileAudio);
-					localStorage.setItem('txat_sound', fileAudio);
+					oView.appendChatItem(null, 'Activation du son personnalisé', jsonStyle);									
+					updateSoundBody(aData[1].replace(/'/g, ""),ID_PLAY_SOUND, "");
 					playSound();
 				}							
 			break;

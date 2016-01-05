@@ -1,17 +1,21 @@
 @CHARSET "UTF-8";
 
-.avatarpop {
+.popup.avatarpop {
 	width: 800px;
-	height: 500px;
+	height: 600px;
+	left: 45%;
+	top: 35%;
 }
 
 .avatarpop .proposition {
 	border: dotted white;
+	width: 692px;
 }
 
 .avatarpop .diapo {
 	overflow: auto;
 	height: 136px;
+	border: medium dotted #FFF;
 }
 
 .avatarpop img.choice {
@@ -65,4 +69,19 @@ div.avatarMessage {
 
 #colordivborder {
 	display: none;
+}
+
+p.labelcolor {
+	width: 64px;
+	display: block;
+	float: left;
+	text-align: center;
+	font-style: italic;
+	font-size: 8px;
+}
+
+button.validAvatar {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="Txat/addons/codehighlighter/highlight/|Txat/addons/codehighlighter/|Txat/addons/timemessage/|Txat/addons/avatar/|**/*.min.js|**/node_modules/*|**/bower_components/*|Txat/" kind="src" path="scripts"/>
+	<classpathentry excluding="addons/timemessage/|addons/codehighlighter/|**/*.min.js|**/node_modules/*|**/bower_components/*|addons/avatar/|addons/codehighlighter/highlight/" kind="src" path="scripts/Txat"/>
+	<classpathentry excluding="**/*.min.js|**/node_modules/*|**/bower_components/*" kind="src" path="scripts/Txat/addons/avatar"/>
+	<classpathentry excluding="**/*.min.js|**/node_modules/*|**/bower_components/*|highlight/" kind="src" path="scripts/Txat/addons/codehighlighter"/>
+	<classpathentry excluding="**/*.min.js|**/node_modules/*|**/bower_components/*" kind="src" path="scripts/Txat/addons/codehighlighter/highlight"/>
+	<classpathentry excluding="**/*.min.js|**/node_modules/*|**/bower_components/*" kind="src" path="scripts/Txat/addons/timemessage"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

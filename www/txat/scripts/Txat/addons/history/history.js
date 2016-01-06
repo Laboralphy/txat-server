@@ -5,37 +5,50 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 
    var KEY_UP = 38;
    var KEY_DOWN = 40;
-//   var KEY_SLASH = 16;
-//   var KEY_ENTER = 13;
+   var KEY_CTRL = 17;
+   var KEY_C= 67;
+   
+   var CTRL = false;
+   // var KEY_SLASH = 16;
+   // var KEY_ENTER = 13;
 
-   //la zone de saisie
+   // la zone de saisie
    var oInput = $("#input");
 
-   //notre gestionnaire d'historique
+   // notre gestionnaire d'historique
    var oHistoryManager = new History.Manager();
-   
-   //définition du man
+
+   // définition du man
    oApplication.on('help', function(oCtx) {
       oCtx.history = 'pour définir le nombre de messages à conserver';
    });
 
    oInput.on('keyup', function(oEvent) {
-//      console.log(oEvent.which);
+//       console.log(oEvent.which);
       if (oInput.is(':focus')) {
          switch (oEvent.which) {
             case KEY_UP:
+               CTRL = false;
                var msg = oHistoryManager.getPrevMessage();
                if (msg !== false) {
                   oInput.val(msg);
                }
             break;
             case KEY_DOWN:
+               CTRL = false;
                var msg = oHistoryManager.getNextMessage();
                if (msg !== false) {
                   oInput.val(msg);
                }
             break;
+            case KEY_CTRL:
+               CTRL = true;
             default:
+            case KEY_C:
+               if(CTRL == true) {
+                  CTRL = false;
+                  oInput.val('');
+               }
             break;
          }
       }
@@ -46,24 +59,24 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
       var $usermessage = $('span.usermessage', $item);
       if ($usermessage.length > 0) {
          var sContent = $usermessage.text();
-         if(data.history.user == oApplication.getUserName()) {
+         if (data.history.user == oApplication.getUserName()) {
             oHistoryManager.saveMessage(sContent);
          }
       }
    });
-   
-   //si command
+
+   // si command
    oApplication.on('command', function(oContext) {
       var cmd = oContext.c;
       var param = oContext.p;
-      if(cmd != 'say') {
+      if (cmd != 'say') {
          var saveMsg = "/" + cmd;
-         if(param && param != "undefined") {
-               saveMsg += " " + param;
+         if (param && param != "undefined") {
+            saveMsg += " " + param;
          }
          oHistoryManager.saveMessage(saveMsg);
       }
-   } );
+   });
 
    // créer une nouvelle commande /code
    oApplication.defineCommand('history', function() {
@@ -72,11 +85,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
          // code
          $pop.addClass('p640')
          var $popcont = $('div.content', $pop);
-         $popcont.html(
-               '<p>taille de l\'historique</p>'
-               +'<input type=\'text\' name="sizeHistory"/>'
-               +'<br/>'
-               +'<button type="button">enregistrer</button>');
+         $popcont.html('<p>taille de l\'historique</p>' + '<input type=\'text\' name="sizeHistory"/>' + '<br/>' + '<button type="button">enregistrer</button>');
          var $size = $("input", $popcont);
          $size.val(oHistoryManager.getSize());
          var $button = $('button', $popcont);
@@ -95,7 +104,7 @@ O2.createClass('History.Manager', {
 
    _history : [],
    _current : 0,
-   _size: 20,
+   _size : 20,
 
    __construct : function() {
       // storing
@@ -110,13 +119,18 @@ O2.createClass('History.Manager', {
    },
 
    getPrevMessage : function() {
+      this._current++;
       if (this._current in this._history) {
          var msg = this._history[this._current];
-         this._current++;
          return msg;
       } else {
-         this._current = 0;
-         return false;
+         if (this._history.length == 0) {
+            return false;
+         } else {
+            this._current = 0;
+            var msg = this._history[this._current];
+            return msg;
+         }
       }
    },
 
@@ -126,30 +140,36 @@ O2.createClass('History.Manager', {
          var msg = this._history[this._current];
          return msg;
       } else {
-         this._current = this._history.length - 1;
-         return false;
+         if (this._history.length == 0) {
+            return false;
+         } else {
+            this._current = this._history.length - 1;
+            var msg = this._history[this._current];
+            return msg;
+         }
       }
    },
 
    /**
     * Enregistre les messages persos
+    * 
     * @params string msg message
     * @return void
     */
    saveMessage : function(msg) {
-      //on place le message au début
+      // on place le message au début
       this._history.unshift(msg);
-      //on supprime les éléments supérieurs à la limite définie
+      // on supprime les éléments supérieurs à la limite définie
       this._history.splice(this._size, this._history.length - this._size);
       localStorage.setItem('history_msg', JSON.stringify(this._history));
       this._current = 0;
    },
-   
-   getSize: function() {
+
+   getSize : function() {
       return this._size;
    },
-   
-   setSize:function(size) {
+
+   setSize : function(size) {
       this._size = size;
       localStorage.setItem('history_size', this._size);
    }

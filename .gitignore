@@ -4,7 +4,3 @@ logs/*
 
 #plugin avatar images
 www/txat/scripts/Txat/addons/avatar/images/avatars/*
-/nbproject/private//nbproject/project.xml
-/nbproject/project.properties
-/nbproject/private/private.properties
-/nbproject/private/private.xml

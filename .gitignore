@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-/logs/
-/pass.storage/
-/upref.storage/
-=======
 pass.storage/*
 upref.storage/*
 logs/*
 
 #plugin avatar images
 www/txat/scripts/Txat/addons/avatar/images/avatars/*
->>>>>>> refs/remotes/origin/master
-/history.storage/

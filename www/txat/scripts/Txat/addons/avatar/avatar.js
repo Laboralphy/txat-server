@@ -129,7 +129,7 @@ $(window).on(
                $html.append($("<p>").html("or choose one in your history"));
                var $diapo2 = $("<div>").addClass('diapo');
                for (i = 0; i <= oConfig.image; i++) {
-                  var $image = $("<img>").addClass('choice').attr('src', PATH_IMAGES + oApplication.getUserName() + "/" + i + ".png");
+                  var $image = $("<img>").addClass('choice').attr('src', PATH_IMAGES + oApplication.getUserName() + "/" + i + ".png").on('error', function() { $(this).remove(); });
                   $diapo2.append($image);
                }
                $html.append($diapo2);

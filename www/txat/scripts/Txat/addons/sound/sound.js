@@ -174,6 +174,18 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		}else if(data.m == '!starwars') {
 		    updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);		   
 		    playSound(ID_PLAY_SOUND_OTHER);
+		}else if(data.m == '!atable') {		   
+		    updateSoundBody("atable.wav", ID_PLAY_SOUND_OTHER);		   
+		    playSound(ID_PLAY_SOUND_OTHER);
+		}else if(data.m == '!apero') {		   
+		    updateSoundBody("un_petit_coup.mp3", ID_PLAY_SOUND_OTHER);		   
+		    playSound(ID_PLAY_SOUND_OTHER);	
+		}else if(data.m == '!allo') {		   
+		    updateSoundBody("allomcfly.mp3", ID_PLAY_SOUND_OTHER);		   
+		    playSound(ID_PLAY_SOUND_OTHER);	
+		}else if(data.m == '!nomdezeus') {		   
+		    updateSoundBody("nomdezeus3.mp3", ID_PLAY_SOUND_OTHER);		   
+		    playSound(ID_PLAY_SOUND_OTHER);		
 		}else if (data.m == 'wizz') {
  		    updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
 		    wizz(document.body, 16, 2, 0.95);

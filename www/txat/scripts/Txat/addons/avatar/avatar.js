@@ -63,10 +63,6 @@ $(window).on(
             if (!oConfig || !('version' in oConfig)) {
                _reset();
             }
-            /**
-             * Chargement du login de connexion
-             */
-             if (oConfig.user) $('#iLogin').val(oConfig.user);
          }
          _init();
 
@@ -105,30 +101,11 @@ $(window).on(
                   if (oConfig.extension != a.extension) {
                      _store('extension', a.extension);
                   }
-                  if (oConfig.enterSound != a.enterSound) {
-                     _store('enterSound', a.enterSound);
-                  }
+                  console.log("test", _store());
                }
-                 // Joue le son lors de l'arrivée du client
-				if ($usermessage.text() == "!arrival") {
-					$item.remove();
-					if (a.enterSound) {
-						player = document.querySelector('#other');
-						player.src = a.enterSound;
-						player.play();
-					}
-				}
             }
          });
-         
-		 oApplication.on('channelArrival', function(data) {
-			 // Lance le son lors de l'arrivée du client
-			if (data.u == oApplication.getUserName()) {
-				oApplication.command('/say !arrival');
-			};
-			// Sauvegarde l'utilisateur pour la prochaine connexion
-			_store('user',data.u);
-		});
+
          // créer une nouvelle commande /code
          oApplication.defineCommand('avatar', function() {
             avatarPopup();
@@ -180,7 +157,7 @@ $(window).on(
                });
 
                $popcont.append($("<p>").html("your (bad) choice:"));
-				$popcont.append($("<p>").html('Choise an enter sound effect url (not so long please...)<input type="text" id="enterSound"/>'));
+
                var $col = $("<p>").html('choose border and text colors');
 
                var $example = $('<div class="message avatarMessage avatarExample">' 
@@ -203,8 +180,7 @@ $(window).on(
                });
                // textcolor
                var $colorTextInput = $("#color", $pop).val(oConfig.color);
-				// enter sound
-				var $enterSoundInput = $("#enterSound", $pop).val(oConfig.enterSound);
+
                // bordercolor
                var $colorBorderInput = $("#colorborder", $pop).val(oConfig.border);
                // bordercolor
@@ -230,7 +206,6 @@ $(window).on(
                   oConfig.color = $colorTextInput.val();
                   oConfig.border = $colorBorderInput.val();
                   oConfig.bg = $colorBgInput.val();
-                  oConfig.enterSound = $enterSoundInput.val();
                   sConfig = JSON.stringify(oConfig);
                   // envoi serveur
                   oApplication.command('/upref avatar ' + sConfig);

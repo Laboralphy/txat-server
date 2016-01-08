@@ -131,7 +131,7 @@ div.input input {
 
  
 /* POPUP */
-.popup {
+div.popup {
 	position: absolute;
 	left: 50%;
 	top: 50%;

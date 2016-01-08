@@ -176,7 +176,7 @@ div.popup div.title {
 }
 
 /* CHANNEL LIST */
-#channelList {
+div.popup.channelList {
 	width: 320px;
 	height: 320px;
 	position: absolute;
@@ -187,14 +187,14 @@ div.popup div.title {
 	padding: 8px;
 }
 
-#channelList div.content {
+div.popup.channelList div.content {
 	height: 240px;
 	overflow-y: auto;
 	padding: 8px;
 	border: inset thin;
 }
 
-#channelList div.content div.channel {
+div.popup.channelList div.content div.channel {
 	cursor: pointer;
 }
 

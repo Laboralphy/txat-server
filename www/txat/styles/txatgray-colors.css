@@ -87,16 +87,16 @@ div.popup .close:hover {
 	color: #700;
 }
 
-#channelList div.title {
+.popup.channelList div.title {
 	color: #007;
 }
 
-#channelList div.content {
+.popup.channelList div.content {
 	border-color: #BBB;
 	background-color: #BBB;
 }
 
-#channelList div.content div.channel:hover {
+.popup.channelList div.content div.channel:hover {
 	background-color: #008;
 	color: #FFF;
 }

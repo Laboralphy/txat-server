@@ -166,7 +166,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	}
           
 	// Intercepte le message pour lancer le son
-	oApplication.on('chatMessage', function(data) { 
+	oApplication.on('chatMessage', function(data) {
 		if (data.m == '!gameover') {
 		    updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
 		    $('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
@@ -181,5 +181,5 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		}else if (data.u != oApplication.sMe && sSoundStatus === 'activé') {           				
 		    playSound();   				  
 		}                  
-	});                 
+	});
 });

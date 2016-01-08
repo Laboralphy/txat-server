@@ -258,6 +258,7 @@ O2.createClass('TXAT.View', {
 		'	</div>' +
 		'	<div class="content"></div>' +
 		'</div>');
+		$popup.addClass(sId);
 		$('body').append($popup);
 		return this.oPopups[sId] = $popup;
 	},
@@ -279,7 +280,7 @@ O2.createClass('TXAT.View', {
 	viewError: function(sMsg) {
 		$('div.popup:visible').hide();
 		var $popup = this.getPopup('error', 'System message');
-		$popup.addClass('error p320');
+		$popup.addClass('p320');
 		var $popupContent = $('div.content', $popup);
 		$popupContent.html(sMsg);
 		$popup.fadeIn('fast');
@@ -292,7 +293,7 @@ O2.createClass('TXAT.View', {
 	viewHelp: function(oContext) {
 		$('div.popup:visible').hide();
 		var $popup = this.getPopup('help', 'Help');
-		$popup.addClass('help p640');
+		$popup.addClass('p640');
 		var $popupContent = $('div.content', $popup);
 		$popupContent.empty();
 		var $dl = $('<dl></dl>');

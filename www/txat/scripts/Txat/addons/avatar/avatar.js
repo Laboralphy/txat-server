@@ -122,12 +122,12 @@ $(window).on(
          });
          
 		 oApplication.on('channelArrival', function(data) {
-			 // Lance le son lors de l'arrivée du client
 			if (data.u == oApplication.getUserName()) {
+				// Lance le son lors de l'arrivée du client
 				oApplication.command('/say !arrival');
+				// Sauvegarde l'utilisateur pour la prochaine connexion
+				_store('user',data.u);
 			};
-			// Sauvegarde l'utilisateur pour la prochaine connexion
-			_store('user',data.u);
 		});
          // créer une nouvelle commande /code
          oApplication.defineCommand('avatar', function() {

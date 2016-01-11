@@ -97,68 +97,6 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			soundPopup();
 		}
 	});
-			//~ 
-		//~ var jsonStyle =  {
-							//~ 'font-style'         : 'italic', 
-							//~ 'color'              : '#008', 
-							//~ 'border'             : 'none', 
-							//~ 'box-shadow'         : '0 0 0', 
-							//~ '-webkit-box-shadow' : '0 0 0', 
-							//~ '-o-box-shadow'      : '0 0 0',
-							//~ 'padding'            : '10px',
-							//~ 'min-height'         : '0',
-							//~ 'height'             : '5px'
-						 //~ };	
-		//~ // Création du tableau pour les options de la commande
-		//~ var aData = [];
-		//~ 
-		//~ // Génère le tableau d'options
-		//~ if(typeof data !== 'undefined') {
-			//~ var aData = data.split(" ");
-		//~ }
-		//~ // Exécute l'action demandé en fonction des options
-		//~ switch (aData[0]) {
-			//~ case 'on':
-				//~ sSoundStatus = 'activé'; 
-				//~ oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
-				//~ playSound();
-			//~ break;
-			//~ case 'off':
-				//~ sSoundStatus = 'désactivé'; 
-				//~ oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
-			//~ break;    
-			//~ case 'status':
-				//~ oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
-			//~ break;     
-			//~ case 'test':
-				//~ oView.appendChatItem(null, 'Son testé !', jsonStyle);
-				//~ playSound();
-			//~ break;
-			//~ case 'mario':
-				//~ oView.appendChatItem(null, 'Activation de Mario !', jsonStyle);
-				//~ updateSoundBody("saut.wav");
-				//~ document.querySelector('#' + ID_PLAY_SOUND).play(); 
-			//~ break;
-			//~ case 'add':
-				//~ if (typeof aData[1] === 'undefined') {
-					//~ oView.appendChatItem(null, 'Paramètre manquant : url !', jsonStyle);
-				//~ } else {
-					//~ var fileAudio = aData[1].replace(/'/g, "");
-					//~ oView.appendChatItem(null, 'Activation du son personnalisé', jsonStyle);						
-					//~ updateSoundBody(fileAudio,ID_PLAY_SOUND, "");
-					//~ //oApplication.command('/upref sound ' + fileAudio);
-					//~ localStorage.setItem('txat_sound', fileAudio);
-					//~ playSound();
-				//~ }				&& index != 'userArrival'			
-			//~ break;
-			//~ case 'gameover':
-				//~ oView.appendChatItem(null, 'Game-Over !', jsonStyle);
-				//~ playSound(ID_PLAY_SOUND_OTHER);				
-			//~ break;
-			//~ default:			
-				//~ oView.appendChatItem(null, 'Commande /sound [option]{on,off,status,test,add \'url\'}', jsonStyle);
-			//~ break;
-		//~ } 
 	var soundPopup = function() {
 		var $pop = oView.getPopup('soundPopup', 'Sound settings');
 		var $popcont = $('div.content', $pop);
@@ -233,42 +171,6 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		oObject.parentNode.style.overflow = 'hidden';
 	}
           
-	// Intercepte le message pour lancer le son
-	oApplication.on('chatMessage', function(data) {
-		//~ if (soundPerso.emote.val) {
-			//~ if (data.m == '!gameover') {
-				//~ updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
-				//~ $('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
-				//~ playSound(ID_PLAY_SOUND_OTHER);
-			//~ }else if(data.m == '!starwars') {
-				//~ updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);		   
-				//~ playSound(ID_PLAY_SOUND_OTHER);
-			//~ }else if(data.m == '!atable') {		   
-				//~ updateSoundBody("atable.wav", ID_PLAY_SOUND_OTHER);		   
-				//~ playSound(ID_PLAY_SOUND_OTHER);
-			//~ }else if(data.m == '!apero') {		   
-				//~ updateSoundBody("un_petit_coup.mp3", ID_PLAY_SOUND_OTHER);		   
-				//~ playSound(ID_PLAY_SOUND_OTHER);	
-			//~ }else if(data.m == '!allo') {
-				//~ updateSoundBody("allomcfly.mp3", ID_PLAY_SOUND_OTHER);		   
-				//~ playSound(ID_PLAY_SOUND_OTHER);	
-			//~ }else if(data.m == '!nomdezeus') {		   
-				//~ updateSoundBody("nomdezeus3.mp3", ID_PLAY_SOUND_OTHER);		   
-				//~ playSound(ID_PLAY_SOUND_OTHER);		
-			//~ }else if (data.m == 'wizz') {
-				//~ updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
-				//~ wizz(document.body, 16, 2, 0.95);
-				//~ playSound(ID_PLAY_SOUND_OTHER);
-			//~ }
-		//~ }
-		//~ if (data.u != oApplication.sMe && soundPerso.newMessage.val) {
-			//~ playSound();
-		//~ }
-		//~ if (data.d.avatar.enterSound && data.m == '!arrival' && soundPerso.userArrival.val) {
-			//~ updateSoundBody("", ID_PLAY_SOUND_OTHER,data.d.avatar.enterSound);		   
-			//~ playSound(ID_PLAY_SOUND_OTHER);
-		//~ }
-	});
 	oView.on('chatItemAppended', function(data) {
 		console.log(data);
 		var $item = $(data.o);

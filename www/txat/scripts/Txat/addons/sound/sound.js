@@ -6,22 +6,35 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	var URL_SOUND = 'scripts/Txat/addons/sound/sons/';
 	var SOUND_DEFAULT = 'default.mp3';
 	
-	// Récupère le son personnalisé de l'utilisateur
-	var soundPerso = localStorage.getItem('txat_sound'); 
-		
-	// Active le son par défaut	
-    	var sSoundStatus = 'activé'; 	
+	// Array contenant toutes les valeurs possibles
+	var SOUND_SETTINGS = {
+		'newMessage' 	: { 'label' : 'Nouveau message'		, 'val' : true	, 'sound' : SOUND_DEFAULT},
+		'userArrival' 	: { 'label' : 'Nouvel utilisateur'	, 'val' : true},
+		'emote'			: { 'label' : 'Emotes'				, 'val' : true}
+	};
 	
-	if (soundPerso != null) {
-		// Lance la fonction qui génère la balise audio pour le son personnalisé
-        	addSoundBody(soundPerso, ID_PLAY_SOUND, "");
-	} else {
+	// Récupère le son personnalisé de l'utilisateur
+	var soundPerso = JSON.parse(localStorage.getItem('txat_sound'));
+	
+	// Active le son par défaut
+    var sSoundStatus = 'activé'; 
+	
+	function _init() {
+		if (!soundPerso) {
+			soundPerso = SOUND_SETTINGS;
+		}
 		// Lance la fonction qui génère la balise audio pour le son par défaut
-		addSoundBody();
+		addSoundBody(soundPerso.newMessage.sound, ID_PLAY_SOUND, "");
+		// Lance la fonction qui génère la balise audio pour gameover
+		addSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+		// Ajout le bouton son au document
+		$soundButton = $('<button>').html('&#9835;').addClass('soundMenu').on('click', function(oEvent) {
+			oApplication.command('/sound');
+		});
+		$('#requestList').before($soundButton);
 	}
+	_init();
 
-	// Lance la fonction qui génère la balise audio pour gameover
-	addSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
 
 	
 	/** 
@@ -58,7 +71,6 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	function playSound(idSound) {
 		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;
 		document.querySelector('#' + idSound).play();
-		
 	}
 
 
@@ -74,69 +86,125 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 * 		(Par défaut : liste les commandes disponibles)        *
 	 * ********************************************************** */
 	oApplication.defineCommand('sound', function(data) {
-		
-		var jsonStyle =  {
-							'font-style'         : 'italic', 
-							'color'              : '#008', 
-							'border'             : 'none', 
-							'box-shadow'         : '0 0 0', 
-							'-webkit-box-shadow' : '0 0 0', 
-							'-o-box-shadow'      : '0 0 0',
-							'padding'            : '10px',
-							'min-height'         : '0',
-							'height'             : '5px'
-						 };	
-		// Création du tableau pour les options de la commande
 		var aData = [];
-		
-		// Génère le tableau d'options
 		if(typeof data !== 'undefined') {
-			var aData = data.split(" ");
+			aData = data.split(" ");
 		}
-		// Exécute l'action demandé en fonction des options
-		switch (aData[0]) {
-			case 'on':
-				sSoundStatus = 'activé'; 
-				oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
-				playSound();
-			break;
-			case 'off':
-				sSoundStatus = 'désactivé'; 
-				oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
-			break;    
-			case 'status':
-				oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
-			break;     
-			case 'test':
-				oView.appendChatItem(null, 'Son testé !', jsonStyle);
-				playSound();
-			break;
-			case 'mario':
-				oView.appendChatItem(null, 'Activation de Mario !', jsonStyle);
-				updateSoundBody("saut.wav");
-				document.querySelector('#' + ID_PLAY_SOUND).play(); 
-			break;
-			case 'add':
-				if (typeof aData[1] === 'undefined') {
-					oView.appendChatItem(null, 'Paramètre manquant : url !', jsonStyle);
-				} else {
-					var fileAudio = aData[1].replace(/'/g, "");
-					oView.appendChatItem(null, 'Activation du son personnalisé', jsonStyle);						
-					updateSoundBody(fileAudio,ID_PLAY_SOUND, "");
-					//oApplication.command('/upref sound ' + fileAudio);
-					localStorage.setItem('txat_sound', fileAudio);
-					playSound();
-				}							
-			break;
-			case 'gameover':
-				oView.appendChatItem(null, 'Game-Over !', jsonStyle);
-				playSound(ID_PLAY_SOUND_OTHER);				
-			break;
-			default:			
-				oView.appendChatItem(null, 'Commande /sound [option]{on,off,status,test,add \'url\'}', jsonStyle);
-			break;
-		}              
-	});     
+		if (aData[0] == 'play') {
+			updateSoundBody("", ID_PLAY_SOUND_OTHER,aData[1]);
+			playSound(ID_PLAY_SOUND_OTHER);
+		} else {
+			soundPopup();
+		}
+	});
+			//~ 
+		//~ var jsonStyle =  {
+							//~ 'font-style'         : 'italic', 
+							//~ 'color'              : '#008', 
+							//~ 'border'             : 'none', 
+							//~ 'box-shadow'         : '0 0 0', 
+							//~ '-webkit-box-shadow' : '0 0 0', 
+							//~ '-o-box-shadow'      : '0 0 0',
+							//~ 'padding'            : '10px',
+							//~ 'min-height'         : '0',
+							//~ 'height'             : '5px'
+						 //~ };	
+		//~ // Création du tableau pour les options de la commande
+		//~ var aData = [];
+		//~ 
+		//~ // Génère le tableau d'options
+		//~ if(typeof data !== 'undefined') {
+			//~ var aData = data.split(" ");
+		//~ }
+		//~ // Exécute l'action demandé en fonction des options
+		//~ switch (aData[0]) {
+			//~ case 'on':
+				//~ sSoundStatus = 'activé'; 
+				//~ oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
+				//~ playSound();
+			//~ break;
+			//~ case 'off':
+				//~ sSoundStatus = 'désactivé'; 
+				//~ oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
+			//~ break;    
+			//~ case 'status':
+				//~ oView.appendChatItem(null, 'Le son est '+ sSoundStatus, jsonStyle);
+			//~ break;     
+			//~ case 'test':
+				//~ oView.appendChatItem(null, 'Son testé !', jsonStyle);
+				//~ playSound();
+			//~ break;
+			//~ case 'mario':
+				//~ oView.appendChatItem(null, 'Activation de Mario !', jsonStyle);
+				//~ updateSoundBody("saut.wav");
+				//~ document.querySelector('#' + ID_PLAY_SOUND).play(); 
+			//~ break;
+			//~ case 'add':
+				//~ if (typeof aData[1] === 'undefined') {
+					//~ oView.appendChatItem(null, 'Paramètre manquant : url !', jsonStyle);
+				//~ } else {
+					//~ var fileAudio = aData[1].replace(/'/g, "");
+					//~ oView.appendChatItem(null, 'Activation du son personnalisé', jsonStyle);						
+					//~ updateSoundBody(fileAudio,ID_PLAY_SOUND, "");
+					//~ //oApplication.command('/upref sound ' + fileAudio);
+					//~ localStorage.setItem('txat_sound', fileAudio);
+					//~ playSound();
+				//~ }				&& index != 'userArrival'			
+			//~ break;
+			//~ case 'gameover':
+				//~ oView.appendChatItem(null, 'Game-Over !', jsonStyle);
+				//~ playSound(ID_PLAY_SOUND_OTHER);				
+			//~ break;
+			//~ default:			
+				//~ oView.appendChatItem(null, 'Commande /sound [option]{on,off,status,test,add \'url\'}', jsonStyle);
+			//~ break;
+		//~ } 
+	var soundPopup = function() {
+		var $pop = oView.getPopup('soundPopup', 'Sound settings');
+		var $popcont = $('div.content', $pop);
+		if ($popcont.html() == "") {
+		   $pop.addClass('p640');
+		   var $popcont = $('div.content', $pop);
+		   // Choix des sons actifs
+		   $activeSound = $('<div>').addClass('activeSound');
+		   $soundprofile = $('<div>').addClass('soundProfile');
+		   $popcont.append('<h3>Active sound</h3>').append($activeSound);
+		   $popcont.append('<h3>Sound profile</h3>').append($soundprofile);
+		   $.each(soundPerso, function( index, value ) {
+				$activeSound.append('<div><label><input type="checkbox" name="'+ index +'.val" '+ ( value.val ? 'checked':'') +' /> '+value.label +'</label></div>');
+				if (index != 'emote' && index != 'userArrival') {
+					$soundprofile.append('<div><label>'+ value.label +'</label><input type="url" placeholder="url" name="'+ index +'.sound" value="'+ (value.sound ? value.sound:'') +'" /></div>');
+				}
+			});
+			
+		   var $ok = $("<button>").html("save").addClass('submitPopup');
+		   $popcont.append($ok);
+		   // event on validation
+		   $ok.on('click', function(oEvent) {
+			   $('input','.soundPopup').each(function () {
+				   values = $(this).attr('name').split('.');
+				   if ($(this).is('[type="checkbox"]')) {
+						if ($(this).prop('checked')) {
+							val = true;
+						} else {
+							val = false;
+						}
+					} else {
+						val = $(this).val();
+					}
+				   if (soundPerso[values[0]][values[1]] != val) {
+						soundPerso[values[0]][values[1]] = val;
+						if (values[1] == 'sound') {
+							updateSoundBody(val, ID_PLAY_SOUND, "");
+						}
+					}
+			   });
+				localStorage.setItem("txat_sound", JSON.stringify(soundPerso));
+				$pop.fadeOut('fast');
+		   });
+		}
+		$pop.fadeIn('fast');
+	 }
 
 	
 	/**
@@ -167,31 +235,94 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
           
 	// Intercepte le message pour lancer le son
 	oApplication.on('chatMessage', function(data) {
-		if (data.m == '!gameover') {
-		    updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
-		    $('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
-		    playSound(ID_PLAY_SOUND_OTHER);
-		}else if(data.m == '!starwars') {
-		    updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);		   
-		    playSound(ID_PLAY_SOUND_OTHER);
-		}else if(data.m == '!atable') {		   
-		    updateSoundBody("atable.wav", ID_PLAY_SOUND_OTHER);		   
-		    playSound(ID_PLAY_SOUND_OTHER);
-		}else if(data.m == '!apero') {		   
-		    updateSoundBody("un_petit_coup.mp3", ID_PLAY_SOUND_OTHER);		   
-		    playSound(ID_PLAY_SOUND_OTHER);	
-		}else if(data.m == '!allo') {		   
-		    updateSoundBody("allomcfly.mp3", ID_PLAY_SOUND_OTHER);		   
-		    playSound(ID_PLAY_SOUND_OTHER);	
-		}else if(data.m == '!nomdezeus') {		   
-		    updateSoundBody("nomdezeus3.mp3", ID_PLAY_SOUND_OTHER);		   
-		    playSound(ID_PLAY_SOUND_OTHER);		
-		}else if (data.m == 'wizz') {
- 		    updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
-		    wizz(document.body, 16, 2, 0.95);
-		    playSound(ID_PLAY_SOUND_OTHER);
-		}else if (data.u != oApplication.sMe && sSoundStatus === 'activé') {           				
-		    playSound();   				  
-		}                  
+		//~ if (soundPerso.emote.val) {
+			//~ if (data.m == '!gameover') {
+				//~ updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+				//~ $('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
+				//~ playSound(ID_PLAY_SOUND_OTHER);
+			//~ }else if(data.m == '!starwars') {
+				//~ updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);		   
+				//~ playSound(ID_PLAY_SOUND_OTHER);
+			//~ }else if(data.m == '!atable') {		   
+				//~ updateSoundBody("atable.wav", ID_PLAY_SOUND_OTHER);		   
+				//~ playSound(ID_PLAY_SOUND_OTHER);
+			//~ }else if(data.m == '!apero') {		   
+				//~ updateSoundBody("un_petit_coup.mp3", ID_PLAY_SOUND_OTHER);		   
+				//~ playSound(ID_PLAY_SOUND_OTHER);	
+			//~ }else if(data.m == '!allo') {
+				//~ updateSoundBody("allomcfly.mp3", ID_PLAY_SOUND_OTHER);		   
+				//~ playSound(ID_PLAY_SOUND_OTHER);	
+			//~ }else if(data.m == '!nomdezeus') {		   
+				//~ updateSoundBody("nomdezeus3.mp3", ID_PLAY_SOUND_OTHER);		   
+				//~ playSound(ID_PLAY_SOUND_OTHER);		
+			//~ }else if (data.m == 'wizz') {
+				//~ updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
+				//~ wizz(document.body, 16, 2, 0.95);
+				//~ playSound(ID_PLAY_SOUND_OTHER);
+			//~ }
+		//~ }
+		//~ if (data.u != oApplication.sMe && soundPerso.newMessage.val) {
+			//~ playSound();
+		//~ }
+		//~ if (data.d.avatar.enterSound && data.m == '!arrival' && soundPerso.userArrival.val) {
+			//~ updateSoundBody("", ID_PLAY_SOUND_OTHER,data.d.avatar.enterSound);		   
+			//~ playSound(ID_PLAY_SOUND_OTHER);
+		//~ }
 	});
+	oView.on('chatItemAppended', function(data) {
+		console.log(data);
+		var $item = $(data.o);
+		var $username = $('span.username', $item).text();
+		var $usermessage = $('span.usermessage', $item);
+		var message = $usermessage.text();
+		$start = message.split(' ');
+		if ($start[0] == "!play") {
+			$usermessage.text('Lecture du son :'+$start[1]);
+			updateSoundBody("", ID_PLAY_SOUND_OTHER,$start[1]);		   
+			playSound(ID_PLAY_SOUND_OTHER);
+		}
+		if (soundPerso.emote.val) {
+			if (message == '!gameover') {
+				updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+				$('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
+				playSound(ID_PLAY_SOUND_OTHER);
+			}else if(message == '!starwars') {
+				$usermessage.html('<img src="https://media.giphy.com/media/8IZCR0wzEIQms/giphy.gif" alt="Starwars"/>');
+				updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
+				playSound(ID_PLAY_SOUND_OTHER);
+			}else if(message == '!atable') {
+				$usermessage.html('<img src="http://static.mmzstatic.com/wp-content/uploads/2013/06/fail.gif" alt="A table !"/>');
+				updateSoundBody("atable.wav", ID_PLAY_SOUND_OTHER);		   
+				playSound(ID_PLAY_SOUND_OTHER);
+			}else if(message == '!apero') {
+				$usermessage.html('<img src="http://leblog.info/wp-content/uploads/2014/03/Biere-Femme-6.gif" alt="Binouze !"/>');
+				updateSoundBody("un_petit_coup.mp3", ID_PLAY_SOUND_OTHER);		   
+				playSound(ID_PLAY_SOUND_OTHER);	
+			}else if(message == '!allo') {
+				$usermessage.html('<img src="http://lebuzz.eurosport.fr/wp-content/uploads/sites/3/2015/10/tumblr_mov8hm3V181qkwwklo1_500.gif" alt="Allo"/>');
+				updateSoundBody("allomcfly.mp3", ID_PLAY_SOUND_OTHER);		   
+				playSound(ID_PLAY_SOUND_OTHER);	
+			}else if(message == '!nomdezeus') {
+				$usermessage.html('<img src="http://blog-cinefute.com/wp-content/uploads/2015/10/giphy3.gif" alt="Nom de zeus"/>');
+				updateSoundBody("nomdezeus3.mp3", ID_PLAY_SOUND_OTHER);		   
+				playSound(ID_PLAY_SOUND_OTHER);		
+			}else if (message == 'wizz') {
+				updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
+				wizz(document.body, 16, 2, 0.95);
+				playSound(ID_PLAY_SOUND_OTHER);
+			}
+			setTimeout(function(){ $usermessage.text(message); }, 5000);
+		}
+		if ($username != oApplication.sMe && soundPerso.newMessage.val) {
+			playSound();
+		}
+		if (message == '!arrival') {
+			$item.remove();
+			if (data.avatar.enterSound && soundPerso.userArrival.val) {
+				updateSoundBody("", ID_PLAY_SOUND_OTHER,data.avatar.enterSound);		   
+				playSound(ID_PLAY_SOUND_OTHER);
+			}
+		}
+	});
+		
 });

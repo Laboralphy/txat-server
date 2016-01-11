@@ -109,15 +109,6 @@ $(window).on(
                      _store('enterSound', a.enterSound);
                   }
                }
-                 // Joue le son lors de l'arrivée du client
-				if ($usermessage.text() == "!arrival") {
-					$item.remove();
-					if (a.enterSound) {
-						player = document.querySelector('#other');
-						player.src = a.enterSound;
-						player.play();
-					}
-				}
             }
          });
          

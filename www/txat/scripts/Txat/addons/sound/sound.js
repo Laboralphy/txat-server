@@ -14,15 +14,12 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	};
 	
 	// Récupère le son personnalisé de l'utilisateur
-	var soundPerso = JSON.parse(localStorage.getItem('txat_sound'));
+	var soundPerso = localStorage.getItem('txat_sound')?JSON.parse(localStorage.getItem('txat_sound')):SOUND_SETTINGS;
 	
 	// Active le son par défaut
     var sSoundStatus = 'activé'; 
 	
 	function _init() {
-		if (!soundPerso) {
-			soundPerso = SOUND_SETTINGS;
-		}
 		// Lance la fonction qui génère la balise audio pour le son par défaut
 		addSoundBody(soundPerso.newMessage.sound, ID_PLAY_SOUND, "");
 		// Lance la fonction qui génère la balise audio pour gameover
@@ -172,7 +169,6 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	}
           
 	oView.on('chatItemAppended', function(data) {
-		console.log(data);
 		var $item = $(data.o);
 		var $username = $('span.username', $item).text();
 		var $usermessage = $('span.usermessage', $item);
@@ -190,6 +186,10 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				playSound(ID_PLAY_SOUND_OTHER);
 			}else if(message == '!starwars') {
 				$usermessage.html('<img src="https://media.giphy.com/media/8IZCR0wzEIQms/giphy.gif" alt="Starwars"/>');
+				updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
+				playSound(ID_PLAY_SOUND_OTHER);
+			}else if(message == '!stormtrooper') {
+				$usermessage.html('<img src="https://media.giphy.com/media/3oxRmDffqOn2kDWMxy/giphy.gif" alt="Starwars"/>');
 				updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
 				playSound(ID_PLAY_SOUND_OTHER);
 			}else if(message == '!atable') {

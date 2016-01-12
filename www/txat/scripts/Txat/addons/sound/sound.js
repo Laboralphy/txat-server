@@ -14,7 +14,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	};
 	
 	// Récupère le son personnalisé de l'utilisateur
-	var soundPerso = localStorage.getItem('txat_sound')?JSON.parse(localStorage.getItem('txat_sound')):SOUND_SETTINGS;
+	var soundPerso = localStorage.getItem('txat_sound') && localStorage.getItem('txat_sound').charAt(0) == '{'?JSON.parse(localStorage.getItem('txat_sound')):SOUND_SETTINGS;
 	
 	// Active le son par défaut
     var sSoundStatus = 'activé'; 

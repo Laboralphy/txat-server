@@ -174,46 +174,51 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		var $usermessage = $('span.usermessage', $item);
 		var message = $usermessage.text();
 		$start = message.split(' ');
-		if ($start[0] == "!play") {
-			$usermessage.text('Lecture du son :'+$start[1]);
-			updateSoundBody("", ID_PLAY_SOUND_OTHER,$start[1]);		   
-			playSound(ID_PLAY_SOUND_OTHER);
-		}
 		if (soundPerso.emote.val) {
-			if (message == '!gameover') {
-				updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
-				$('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
+			if ($start[0] == "!play") {
+				$usermessage.html('Lecture du son : <audio controls autoplay><source src="'+$start[1]+'" type="audio/mpeg">Your browser does not support the audio element.</audio> (<a href="'+$start[1]+'">'+$start[1]+'</a>)');
+				updateSoundBody("", ID_PLAY_SOUND_OTHER,$start[1]);		   
 				playSound(ID_PLAY_SOUND_OTHER);
-			}else if(message == '!starwars') {
-				$usermessage.html('<img src="https://media.giphy.com/media/8IZCR0wzEIQms/giphy.gif" alt="Starwars"/>');
-				updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
-				playSound(ID_PLAY_SOUND_OTHER);
-			}else if(message == '!stormtrooper') {
-				$usermessage.html('<img src="https://media.giphy.com/media/3oxRmDffqOn2kDWMxy/giphy.gif" alt="Starwars"/>');
-				updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
-				playSound(ID_PLAY_SOUND_OTHER);
-			}else if(message == '!atable') {
-				$usermessage.html('<img src="http://static.mmzstatic.com/wp-content/uploads/2013/06/fail.gif" alt="A table !"/>');
-				updateSoundBody("atable.wav", ID_PLAY_SOUND_OTHER);		   
-				playSound(ID_PLAY_SOUND_OTHER);
-			}else if(message == '!apero') {
-				$usermessage.html('<img src="http://leblog.info/wp-content/uploads/2014/03/Biere-Femme-6.gif" alt="Binouze !"/>');
-				updateSoundBody("un_petit_coup.mp3", ID_PLAY_SOUND_OTHER);		   
-				playSound(ID_PLAY_SOUND_OTHER);	
-			}else if(message == '!allo') {
-				$usermessage.html('<img src="http://lebuzz.eurosport.fr/wp-content/uploads/sites/3/2015/10/tumblr_mov8hm3V181qkwwklo1_500.gif" alt="Allo"/>');
-				updateSoundBody("allomcfly.mp3", ID_PLAY_SOUND_OTHER);		   
-				playSound(ID_PLAY_SOUND_OTHER);	
-			}else if(message == '!nomdezeus') {
-				$usermessage.html('<img src="http://blog-cinefute.com/wp-content/uploads/2015/10/giphy3.gif" alt="Nom de zeus"/>');
-				updateSoundBody("nomdezeus3.mp3", ID_PLAY_SOUND_OTHER);		   
-				playSound(ID_PLAY_SOUND_OTHER);		
-			}else if (message == 'wizz') {
-				updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
-				wizz(document.body, 16, 2, 0.95);
-				playSound(ID_PLAY_SOUND_OTHER);
+			} else {
+				if (message == '!gameover') {
+					updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+					$('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
+					playSound(ID_PLAY_SOUND_OTHER);
+				}else if(message == '!starwars') {
+					$usermessage.html('<img src="https://media.giphy.com/media/8IZCR0wzEIQms/giphy.gif" alt="Starwars"/>');
+					updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
+					playSound(ID_PLAY_SOUND_OTHER);
+				}else if(message == '!stormtrooper') {
+					$usermessage.html('<img src="https://media.giphy.com/media/3oxRmDffqOn2kDWMxy/giphy.gif" alt="Starwars"/>');
+					updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
+					playSound(ID_PLAY_SOUND_OTHER);
+				}else if(message == '!atable') {
+					$usermessage.html('<img src="http://static.mmzstatic.com/wp-content/uploads/2013/06/fail.gif" alt="A table !"/>');
+					updateSoundBody("atable.wav", ID_PLAY_SOUND_OTHER);		   
+					playSound(ID_PLAY_SOUND_OTHER);
+				}else if(message == '!apero') {
+					$usermessage.html('<img src="http://leblog.info/wp-content/uploads/2014/03/Biere-Femme-6.gif" alt="Binouze !"/>');
+					updateSoundBody("un_petit_coup.mp3", ID_PLAY_SOUND_OTHER);		   
+					playSound(ID_PLAY_SOUND_OTHER);	
+				}else if(message == '!allo') {
+					$usermessage.html('<img src="http://lebuzz.eurosport.fr/wp-content/uploads/sites/3/2015/10/tumblr_mov8hm3V181qkwwklo1_500.gif" alt="Allo"/>');
+					updateSoundBody("allomcfly.mp3", ID_PLAY_SOUND_OTHER);		   
+					playSound(ID_PLAY_SOUND_OTHER);	
+				}else if(message == '!nomdezeus') {
+					$usermessage.html('<img src="http://blog-cinefute.com/wp-content/uploads/2015/10/giphy3.gif" alt="Nom de zeus"/>');
+					updateSoundBody("nomdezeus3.mp3", ID_PLAY_SOUND_OTHER);		   
+					playSound(ID_PLAY_SOUND_OTHER);
+				}else if(message == '!gendarmerie') {
+					$usermessage.html('<img src="http://i.skyrock.net/5557/78675557/pics/3098856709_1_3_Zq8poiCg.gif" alt="Gendarmerie !"/>');
+					updateSoundBody("http://lasonotheque.org/telecharger.php?format=mp3&id=0886&button=GO%3E", ID_PLAY_SOUND_OTHER);		   
+					playSound(ID_PLAY_SOUND_OTHER);
+				}else if (message == 'wizz') {
+					updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
+					wizz(document.body, 16, 2, 0.95);
+					playSound(ID_PLAY_SOUND_OTHER);
+				}
+				setTimeout(function(){ $usermessage.text(message); }, 5000);
 			}
-			setTimeout(function(){ $usermessage.text(message); }, 5000);
 		}
 		if ($username != oApplication.sMe && soundPerso.newMessage.val) {
 			playSound();

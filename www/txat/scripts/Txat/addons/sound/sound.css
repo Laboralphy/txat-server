@@ -1,6 +1,8 @@
 .soundPopup .content label {
 	display: inline-block;
+/*
 	width:150px;
+*/
 }
 .submitPopup {
 	position: absolute;

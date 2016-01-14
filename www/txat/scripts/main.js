@@ -13,7 +13,6 @@ function startTxatApplication() {
 	var $window = $(window);
 	var PRIVATE_CHANNEL_CHAR = '@';
 	var oApplication = new TXAT.Application();
-	W = oApplication;
 	var oView = new TXAT.View();
 	$window.data({
 		TXAT_APPLICATION: oApplication,

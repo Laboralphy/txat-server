@@ -52,8 +52,9 @@ O2.createClass('TXAT.Application', {
 	identify: function(sMe, sPass) {
 		this.sMe = sMe;
 		this.sPass = sPass;
-		this.oClientSocket.identifyUser(this.sMe, sPass);
+		this.oClientSocket.identifyUser(sMe, sPass);
 	},
+
 
 
 	////// NIVEAU INTERPRETATION ////// NIVEAU INTERPRETATION ////// NIVEAU INTERPRETATION //////
@@ -194,6 +195,7 @@ O2.createClass('TXAT.Application', {
 	
 	cmd_passwd: function(sParam) {
 		this.sendTxat('T_PASSWD', {p: sParam});
+		this.sPass = sParam;
 	},
 	
 	cmd_help: function(sParam) {

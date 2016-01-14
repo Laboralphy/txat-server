@@ -9,10 +9,10 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	// Array contenant toutes les valeurs possibles
 	var SOUND_SETTINGS = {
 		'newMessage' 	: { 'label' : 'Nouveau message'		, 'val' : true	, 'sound' : SOUND_DEFAULT},
-		'userArrival' 	: { 'label' : 'Nouvel utilisateur'	, 'val' : true  , 'sound' : 'saut.mp3'},
+		'userArrival' 	: { 'label' : 'Son d\'arrivée'		, 'val' : true  , 'sound' : 'saut.mp3'},
 		'emote'			: { 'label' : 'Emotes'				, 'val' : true}
 	};
-	
+	var SOUND_LISTING = ['allomcfly.mp3','atable.wav','default.mp3','game-over.wav','nomdezeus3.mp3','saut.wav','star-wars.mp3','un_petit_coup.mp3','wizz.mp3'];
 	// Récupère le son personnalisé de l'utilisateur
 	var soundPerso = localStorage.getItem('txat_sound') && localStorage.getItem('txat_sound').charAt(0) == '{'?JSON.parse(localStorage.getItem('txat_sound')):SOUND_SETTINGS;
 	
@@ -24,6 +24,21 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		addSoundBody(soundPerso.newMessage.sound, ID_PLAY_SOUND);
 		// Lance la fonction qui génère la balise audio pour gameover
 		addSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+		var otherplayer = document.querySelector('#' + ID_PLAY_SOUND_OTHER);
+		$('#chatWindow .chat .input').parent('td').after('<td><button class="otherController">►</button></td>');
+		otherplayer.addEventListener('play',function() {
+			$('.otherController').text("█ █")
+		});
+		otherplayer.addEventListener('pause',function() {
+			$('.otherController').text(" ► ")
+		});
+		$(document).on('click','.otherController',function() {
+			if (otherplayer.paused) {
+				otherplayer.play();
+			} else {
+				otherplayer.pause();
+			}
+		});
 		// Ajout le bouton son au document
 		$soundButton = $('<button>').html('&#9835;').addClass('soundMenu').on('click', function(oEvent) {
 			oApplication.command('/sound');
@@ -44,7 +59,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	function addSoundBody(file, idSound) {
 		file = file || SOUND_DEFAULT;
 		file = file.substring(0,4) == 'http' ? file : URL_SOUND + file;
-		idSound = idSound || ID_PLAY_SOUND;	
+		idSound = idSound || ID_PLAY_SOUND;
 		$('body').append('<audio id="' + idSound + '" src="' + file + '"></audio>');
 	}	
 	
@@ -115,12 +130,16 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		   $popcont.append('<h3>Active sound</h3>').append($activeSound);
 		   $popcont.append('<h3>Sound profile</h3>').append($soundprofile);
 		   $.each(soundPerso, function( index, value ) {
-				$activeSound.append('<div><label><input type="checkbox" name="'+ index +'.val" '+ ( value.val ? 'checked':'') +' /> '+value.label +'</label></div>');
-				if (index != 'emote' && index != 'userArrival') {
-					$soundprofile.append('<div><label>'+ value.label +'</label><input type="url" placeholder="url" name="'+ index +'.sound" value="'+ (value.sound ? value.sound:'') +'" /></div>');
+				$activeSound.append('<div><label><input type="checkbox" name="'+ index +'.val" '+ ( value.val ? 'checked':'') +' /> '+ SOUND_SETTINGS[index].label +'</label></div>');
+				if (index != 'emote') {
+					$soundprofile.append('<div><label>'+ SOUND_SETTINGS[index].label +'</label><input type="text" placeholder="url ou fichier" name="'+ index +'.sound" value="'+ (value.sound ? value.sound:'') +'" list="urllist" /><button class="otherController">►</button></div>');
 				}
 			});
-			
+			var datalist = '<datalist id="urllist">';
+			$.each(SOUND_LISTING,function(index, value) {
+			   datalist += '<option value="'+value+'">'
+		   });
+		   $soundprofile.append(datalist+'</datalist>');
 		   var $ok = $("<button>").html("save").addClass('submitPopup');
 		   $popcont.append($ok);
 		   // event on validation
@@ -146,6 +165,10 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				localStorage.setItem("txat_sound", JSON.stringify(soundPerso));
 				$pop.fadeOut('fast');
 		   });
+		   $('button',$soundprofile).click(function() {
+				url = $(this).prev('input').val();
+				updateSoundBody(url, ID_PLAY_SOUND_OTHER);
+			});
 		}
 		$pop.fadeIn('fast');
 	 }
@@ -227,6 +250,9 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 					break;
 				}
 				if (audio) {
+					$('img',$usermessage).on('load',function() {
+						oView.scrollDown();
+					});
 					updateSoundBody(audio, ID_PLAY_SOUND_OTHER);
 					playSound(ID_PLAY_SOUND_OTHER);
 					setTimeout(function(){
@@ -238,13 +264,18 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		if ($username != oApplication.sMe && soundPerso.newMessage.val) {
 			playSound();
 		}
-		if (message == '!arrival') {
+		if ($start[0] == '!arrival') {
 			$item.remove();
-			if (data.avatar.enterSound && soundPerso.userArrival.val) {
-				updateSoundBody(data.avatar.enterSound, ID_PLAY_SOUND_OTHER);		   
+			if ($start[1] && soundPerso.userArrival.val) {
+				updateSoundBody($start[1], ID_PLAY_SOUND_OTHER);		   
 				playSound(ID_PLAY_SOUND_OTHER);
 			}
 		}
 	});
-		
+	oApplication.on('channelArrival', function(data) {
+		 // Lance le son lors de l'arrivée du client
+		if (data.u == oApplication.getUserName() && soundPerso.userArrival.sound) {
+			oApplication.command('/say !arrival '+ soundPerso.userArrival.sound);
+		};
+	});
 });

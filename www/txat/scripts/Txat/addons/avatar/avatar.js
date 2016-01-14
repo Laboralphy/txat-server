@@ -105,21 +105,11 @@ $(window).on(
                   if (oConfig.extension != a.extension) {
                      _store('extension', a.extension);
                   }
-                  if (oConfig.enterSound != a.enterSound) {
-                     _store('enterSound', a.enterSound);
-                  }
                }
             }
          });
-         
-		 oApplication.on('channelArrival', function(data) {
-			if (data.u == oApplication.getUserName()) {
-				// Lance le son lors de l'arrivée du client
-				oApplication.command('/say !arrival');
-				// Sauvegarde l'utilisateur pour la prochaine connexion
-				_store('user',data.u);
-			};
-		});
+
+
          // créer une nouvelle commande /code
          oApplication.defineCommand('avatar', function() {
             avatarPopup();
@@ -171,7 +161,6 @@ $(window).on(
                });
 
                $popcont.append($("<p>").html("your (bad) choice:"));
-				$popcont.append($("<p>").html('Choise an enter sound effect url (not so long please...)<input type="text" id="enterSound"/>'));
                var $col = $("<p>").html('choose border and text colors');
 
                var $example = $('<div class="message avatarMessage avatarExample">' 
@@ -194,8 +183,6 @@ $(window).on(
                });
                // textcolor
                var $colorTextInput = $("#color", $pop).val(oConfig.color);
-				// enter sound
-				var $enterSoundInput = $("#enterSound", $pop).val(oConfig.enterSound);
                // bordercolor
                var $colorBorderInput = $("#colorborder", $pop).val(oConfig.border);
                // bordercolor
@@ -221,7 +208,6 @@ $(window).on(
                   oConfig.color = $colorTextInput.val();
                   oConfig.border = $colorBorderInput.val();
                   oConfig.bg = $colorBgInput.val();
-                  oConfig.enterSound = $enterSoundInput.val();
                   sConfig = JSON.stringify(oConfig);
                   // envoi serveur
                   oApplication.command('/upref avatar ' + sConfig);

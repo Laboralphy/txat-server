@@ -200,6 +200,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		oObject.parentNode.style.overflow = 'hidden';
 	}
           
+<<<<<<< HEAD
 	oView.on('chatItemAppended', function(data) {
 		var $item = $(data.o);
 		var $username = $('span.username', $item).text();
@@ -278,4 +279,23 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			oApplication.command('/say !arrival '+ soundPerso.userArrival.sound);
 		};
 	});
+=======
+	// Intercepte le message pour lancer le son
+	oApplication.on('chatMessage', function(data) { 
+		if (data.m == '!gameover') {
+		    updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+		    $('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
+		    playSound(ID_PLAY_SOUND_OTHER);
+		}else if(data.m == '!starwars') {
+		    updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);		   
+		    playSound(ID_PLAY_SOUND_OTHER);
+		}else if (data.m == 'wizz') {
+ 		    updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
+		    wizz(document.body, 16, 2, 0.95);
+		    playSound(ID_PLAY_SOUND_OTHER);
+		}else if (data.u != oApplication.sMe && sSoundStatus === 'activé') {           				
+		    playSound();   				  
+		}                  
+	});                 
+>>>>>>> origin/feat-reco
 });

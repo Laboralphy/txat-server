@@ -7,6 +7,7 @@ O2.createClass('TXAT.Application', {
 	oEvents: null,
 	
 	sMe: '',
+	sPass: '',
 	sChannel: '',
 	
 	__construct: function() {
@@ -50,6 +51,7 @@ O2.createClass('TXAT.Application', {
 	// Le client envoie son identification
 	identify: function(sMe, sPass) {
 		this.sMe = sMe;
+		this.sPass = sPass;
 		this.oClientSocket.identifyUser(this.sMe, sPass);
 	},
 

@@ -9,7 +9,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	// Array contenant toutes les valeurs possibles
 	var SOUND_SETTINGS = {
 		'newMessage' 	: { 'label' : 'Nouveau message'		, 'val' : true	, 'sound' : SOUND_DEFAULT},
-		'userArrival' 	: { 'label' : 'Nouvel utilisateur'	, 'val' : true},
+		'userArrival' 	: { 'label' : 'Nouvel utilisateur'	, 'val' : true  , 'sound' : 'saut.mp3'},
 		'emote'			: { 'label' : 'Emotes'				, 'val' : true}
 	};
 	
@@ -21,7 +21,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	
 	function _init() {
 		// Lance la fonction qui génère la balise audio pour le son par défaut
-		addSoundBody(soundPerso.newMessage.sound, ID_PLAY_SOUND, "");
+		addSoundBody(soundPerso.newMessage.sound, ID_PLAY_SOUND);
 		// Lance la fonction qui génère la balise audio pour gameover
 		addSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
 		// Ajout le bouton son au document
@@ -41,11 +41,11 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 * @param string idSound : nom de l'attribut id
 	 * @param string urlSound : url du fichier audio
 	 */
-	function addSoundBody(file, idSound, urlSound) {	
-		file = typeof file !== 'undefined' ? file : SOUND_DEFAULT;	
-		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;	
-		urlSound = typeof urlSound !== 'undefined' ? urlSound : URL_SOUND;			
-		$('body').append('<audio id="' + idSound + '" src="' + urlSound + file + '"></audio>');
+	function addSoundBody(file, idSound) {
+		file = file || SOUND_DEFAULT;
+		file = file.substring(0,4) == 'http' ? file : URL_SOUND + file;
+		idSound = idSound || ID_PLAY_SOUND;	
+		$('body').append('<audio id="' + idSound + '" src="' + file + '"></audio>');
 	}	
 	
 	/** 
@@ -54,10 +54,10 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 * @param string file : fichier de l'audio
 	 * @param string urlSound : url du fichier audio
 	 */
-	function updateSoundBody(file, idSound, urlSound) {		
-		urlSound = typeof urlSound !== 'undefined' ? urlSound : URL_SOUND;	
-		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;			
-		$('#' + idSound).attr('src', urlSound + file);		
+	function updateSoundBody(file, idSound) {
+		file = file.substring(0,4) == 'http' ? file : URL_SOUND + file;
+		idSound = idSound || ID_PLAY_SOUND;			
+		$('#' + idSound).attr('src', file);		
 	}
 	
 	/** 
@@ -66,10 +66,19 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 * @param string idSound : nom de l'attribut id de la balise à lire
 	 */	
 	function playSound(idSound) {
-		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;
+		idSound = idSound || ID_PLAY_SOUND;
 		document.querySelector('#' + idSound).play();
 	}
-
+	
+	/** 
+	 * Fonction qui stoppe la lecture de la balise audio 
+	 * 
+	 * @param string idSound : nom de l'attribut id de la balise à lire
+	 */	
+	function stopSound(idSound) {
+		idSound = idSound || ID_PLAY_SOUND;
+		document.querySelector('#' + idSound).pause();
+	}
 
 	/* ********************************************************** *
 	 * Création de la commande /sound avec gestions des options : *
@@ -174,51 +183,57 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		var $usermessage = $('span.usermessage', $item);
 		var message = $usermessage.text();
 		$start = message.split(' ');
+		if ($start[0] == "!play") {
+			$usermessage.html('Lecture du son : <audio controls '+ (soundPerso.emote.val?'autoplay':'') +'><source src="'+$start[1]+'" type="audio/mpeg">Your browser does not support the audio element.</audio> (<a href="'+$start[1]+'">'+$start[1]+'</a>)');
+		}
 		if (soundPerso.emote.val) {
-			if ($start[0] == "!play") {
-				$usermessage.html('Lecture du son : <audio controls autoplay><source src="'+$start[1]+'" type="audio/mpeg">Your browser does not support the audio element.</audio> (<a href="'+$start[1]+'">'+$start[1]+'</a>)');
-				updateSoundBody("", ID_PLAY_SOUND_OTHER,$start[1]);		   
-				playSound(ID_PLAY_SOUND_OTHER);
-			} else {
-				if (message == '!gameover') {
-					updateSoundBody("game-over.wav", ID_PLAY_SOUND_OTHER);
+			var audio = "";
+			switch (message) {
+				case '!gameover':
+					audio = "game-over.wav";
 					$('body').fadeOut(100).fadeIn(100).fadeOut(500).fadeIn(500).fadeOut(900).fadeIn(900);
-					playSound(ID_PLAY_SOUND_OTHER);
-				}else if(message == '!starwars') {
+					break;
+				case '!starwars':
+					audio = "star-wars.mp3";
 					$usermessage.html('<img src="https://media.giphy.com/media/8IZCR0wzEIQms/giphy.gif" alt="Starwars"/>');
-					updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
-					playSound(ID_PLAY_SOUND_OTHER);
-				}else if(message == '!stormtrooper') {
+					break;
+				case '!stormtrooper':
+					audio = "star-wars.mp3";
 					$usermessage.html('<img src="https://media.giphy.com/media/3oxRmDffqOn2kDWMxy/giphy.gif" alt="Starwars"/>');
-					updateSoundBody("star-wars.mp3", ID_PLAY_SOUND_OTHER);
-					playSound(ID_PLAY_SOUND_OTHER);
-				}else if(message == '!atable') {
+					break;
+				case '!atable':
+					audio = "atable.wav";
 					$usermessage.html('<img src="http://static.mmzstatic.com/wp-content/uploads/2013/06/fail.gif" alt="A table !"/>');
-					updateSoundBody("atable.wav", ID_PLAY_SOUND_OTHER);		   
-					playSound(ID_PLAY_SOUND_OTHER);
-				}else if(message == '!apero') {
+					break;
+				case '!apero':
+					audio = "un_petit_coup.mp3";
 					$usermessage.html('<img src="http://leblog.info/wp-content/uploads/2014/03/Biere-Femme-6.gif" alt="Binouze !"/>');
-					updateSoundBody("un_petit_coup.mp3", ID_PLAY_SOUND_OTHER);		   
-					playSound(ID_PLAY_SOUND_OTHER);	
-				}else if(message == '!allo') {
+					break;
+				case '!allo':
+					audio = "allomcfly.mp3";
 					$usermessage.html('<img src="http://lebuzz.eurosport.fr/wp-content/uploads/sites/3/2015/10/tumblr_mov8hm3V181qkwwklo1_500.gif" alt="Allo"/>');
-					updateSoundBody("allomcfly.mp3", ID_PLAY_SOUND_OTHER);		   
-					playSound(ID_PLAY_SOUND_OTHER);	
-				}else if(message == '!nomdezeus') {
+					break;
+				case '!nomdezeus':
+					audio = "nomdezeus3.mp3";
 					$usermessage.html('<img src="http://blog-cinefute.com/wp-content/uploads/2015/10/giphy3.gif" alt="Nom de zeus"/>');
-					updateSoundBody("nomdezeus3.mp3", ID_PLAY_SOUND_OTHER);		   
-					playSound(ID_PLAY_SOUND_OTHER);
-				}else if(message == '!gendarmerie') {
+					break;
+				case '!gendarmerie':
+					audio = "http://lasonotheque.org/telecharger.php?format=mp3&id=0886&button=GO%3E";
 					$usermessage.html('<img src="http://i.skyrock.net/5557/78675557/pics/3098856709_1_3_Zq8poiCg.gif" alt="Gendarmerie !"/>');
-					updateSoundBody("http://lasonotheque.org/telecharger.php?format=mp3&id=0886&button=GO%3E", ID_PLAY_SOUND_OTHER);		   
-					playSound(ID_PLAY_SOUND_OTHER);
-				}else if (message == 'wizz') {
-					updateSoundBody("wizz.mp3", ID_PLAY_SOUND_OTHER);
+					break;
+				case 'wizz':
+					audio = "wizz.mp3";
 					wizz(document.body, 16, 2, 0.95);
-					playSound(ID_PLAY_SOUND_OTHER);
+					break;
 				}
-				setTimeout(function(){ $usermessage.text(message); }, 5000);
-			}
+				if (audio) {
+					updateSoundBody(audio, ID_PLAY_SOUND_OTHER);
+					playSound(ID_PLAY_SOUND_OTHER);
+					setTimeout(function(){
+						$usermessage.text(message);
+						stopSound(ID_PLAY_SOUND_OTHER);
+					}, 6000);
+				}
 		}
 		if ($username != oApplication.sMe && soundPerso.newMessage.val) {
 			playSound();
@@ -226,7 +241,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		if (message == '!arrival') {
 			$item.remove();
 			if (data.avatar.enterSound && soundPerso.userArrival.val) {
-				updateSoundBody("", ID_PLAY_SOUND_OTHER,data.avatar.enterSound);		   
+				updateSoundBody(data.avatar.enterSound, ID_PLAY_SOUND_OTHER);		   
 				playSound(ID_PLAY_SOUND_OTHER);
 			}
 		}

@@ -63,6 +63,10 @@ $(window).on(
             if (!oConfig || !('version' in oConfig)) {
                _reset();
             }
+            /**
+             * Chargement du login de connexion
+             */
+             if (oConfig.user) $('#iLogin').val(oConfig.user);
          }
          _init();
 
@@ -101,18 +105,10 @@ $(window).on(
                   if (oConfig.extension != a.extension) {
                      _store('extension', a.extension);
                   }
-<<<<<<< HEAD
-=======
-                  console.log("test", _store());
->>>>>>> origin/feat-reco
                }
             }
          });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/feat-reco
          // créer une nouvelle commande /code
          oApplication.defineCommand('avatar', function() {
             avatarPopup();
@@ -164,10 +160,6 @@ $(window).on(
                });
 
                $popcont.append($("<p>").html("your (bad) choice:"));
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/feat-reco
                var $col = $("<p>").html('choose border and text colors');
 
                var $example = $('<div class="message avatarMessage avatarExample">' 
@@ -190,10 +182,6 @@ $(window).on(
                });
                // textcolor
                var $colorTextInput = $("#color", $pop).val(oConfig.color);
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/feat-reco
                // bordercolor
                var $colorBorderInput = $("#colorborder", $pop).val(oConfig.border);
                // bordercolor

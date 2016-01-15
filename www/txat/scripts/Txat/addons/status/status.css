@@ -1,0 +1,50 @@
+body {
+	font-family: monospace;
+	font-size: 12px;
+}
+.user, .contextMenu ul li {
+	padding-left: 16px;
+	line-height: 16px;
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+.online {
+	background-image: url('status/online.png');
+}
+.busy {
+	background-image: url('status/busy.png');
+}
+.beer {
+	background-image: url('status/beer.png');
+}
+.coffee {
+	background-image: url('status/coffee.png');
+}
+.contextMenu {
+	position:absolute;
+	top: 0;
+	left: 0;
+	background: #CCC;
+	min-width: 150px;
+}
+.contextMenu ul {
+	list-style:none;
+	padding:0;
+	width: 100%;
+	margin: 0;
+}
+
+.contextMenu ul li:hover{
+	background-color: #00F;
+	color: #FFF;
+	cursor: pointer;
+}
+.usermessage .u {
+	font-weight: bold;
+}
+.usermessage .u:before {
+	content:'“'; 
+}
+.usermessage .u:after {
+	content:'”';
+}

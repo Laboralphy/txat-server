@@ -48,18 +48,6 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			});
 			$item.remove();
 		}
-		
-		// Formatage des utilisateurs
-		var userList = [];
-		$('.user','#userZone').each(function() {
-			userList.push($(this).text());
-		});
-		console.log(userList);
-		regex = new RegExp('\\b'+userList.join('|')+'\\b', 'gi');
-		message = message.replace(regex,function upper(st) {
-			return '<span class="u">'+st+'</span>';
-		});
-		$usermessage.html(message);
 	});
 	
 	// Information du nouvel arrivant des status actuels

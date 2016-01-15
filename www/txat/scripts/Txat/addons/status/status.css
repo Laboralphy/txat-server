@@ -39,12 +39,3 @@ body {
 	color: #FFF;
 	cursor: pointer;
 }
-.usermessage .u {
-	font-weight: bold;
-}
-.usermessage .u:before {
-	content:'“'; 
-}
-.usermessage .u:after {
-	content:'”';
-}

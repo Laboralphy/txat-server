@@ -30,6 +30,13 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	
 	var CDTADMIN = {"ban 1m kick 1 minute!":"Kicker (1m)","ban":"Bannir","promote":"Promouvoir","demote":"Déchoir"};
 	var curuser;
+	
+	function updateStatus() {
+		var listUser = $('.user','#userZone');
+		listUser.each(function() {
+			$(this).removeClass().addClass('user '+ STATUS[$(this).text()]);
+		});
+	}
 	// Gestion des échanges de données
 	oView.on('chatItemAppended', function(data) {
 		var $item = $(data.o);
@@ -43,9 +50,9 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		if ($start[0] == "!status") {
 			json = JSON.parse($start[1]);
 			$.each(json, function(key, value) {
-				$('.user[name="'+key+'"]','#userZone').removeClass().addClass('user '+ value);
 				STATUS[key] = value;
 			});
+			updateStatus();
 			$item.remove();
 		}
 	});
@@ -60,11 +67,8 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			oApplication.command('/say !status '+ JSON.stringify(STATUS));
 		}
 	});
-	$('#userZone').on("DOMSubtreeModified", function() {
-		$('.user:not([name])',this).each(function() {
-			$(this).attr('name',$(this).text());
-		});
-	});
+	oApplication.on('userList',function() { updateStatus(); });
+	oApplication.on('channelDeparture',function() { updateStatus(); });
 	$(document).on("contextmenu",'#userZone .user',function(e){
 		var $item = $(this);
 		var $username = $item.text();

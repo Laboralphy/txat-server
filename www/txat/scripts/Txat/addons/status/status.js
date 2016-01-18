@@ -31,6 +31,18 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	var CDTADMIN = {"ban 1m kick 1 minute!":"Kicker (1m)","ban":"Bannir","promote":"Promouvoir","demote":"Déchoir"};
 	var curuser;
 	
+	var jsonStyle =  {
+			'font-style'         : 'italic', 
+			'color'              : '#008', 
+			'border'             : 'none', 
+			'box-shadow'         : '0 0 0', 
+			'-webkit-box-shadow' : '0 0 0', 
+			'-o-box-shadow'      : '0 0 0',
+			'padding'            : '10px',
+			'min-height'         : '0',
+			'height'             : '5px'
+		 };	
+	
 	function updateStatus() {
 		var listUser = $('.user','#userZone');
 		listUser.each(function() {
@@ -51,9 +63,11 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			json = JSON.parse($start[1]);
 			$.each(json, function(key, value) {
 				STATUS[key] = value;
+				message = key +' est maintenant ['+ STATUSDISPO[value] +']';
 			});
 			updateStatus();
 			$item.remove();
+			if (Object.keys(json).length == 1) oView.appendChatItem(null, message, jsonStyle);
 		}
 	});
 	
@@ -76,7 +90,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			createContextMenu({'title':'status','class':'status','list':STATUSDISPO},e);
 		} else {
 			curuser = $(this).text();
-			createContextMenu({'title':'Admini','class':'admin','list':CDTADMIN},e);
+			createContextMenu({'title':'Admin','class':'admin','list':CDTADMIN},e);
 		}
 		e.preventDefault();
 	});

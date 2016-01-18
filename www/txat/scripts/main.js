@@ -27,7 +27,9 @@ function startTxatApplication() {
 		try {
 			var $input = $('#iLogin');
 			var $pass = $('#iPassw');
-			oApplication.identify($input.val(), $pass.val());
+			var sLogin = $input.val();
+			var sPass = $pass.val();
+			oApplication.identify(sLogin, sPass);
 			$input.val('');
 			$pass.val('');
 			$input.focus();

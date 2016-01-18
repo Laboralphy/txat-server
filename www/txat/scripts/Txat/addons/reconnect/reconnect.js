@@ -32,10 +32,9 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	var sLogin = localStorage.getItem(REC_LOGIN);
 	if (typeof sLogin === 'string' && sLogin !== '') {
 		// we are reconnecting
-		$('#iLogin').val(sLogin);
-		$('#iPass').val(localStorage.getItem(REC_PASS));
+		var sPass = localStorage.getItem(REC_PASS);
 		localStorage.removeItem(REC_LOGIN);
 		localStorage.removeItem(REC_PASS);
-		$('#bLogin').trigger('click');
+		oApplication.identify(sLogin, sPass);
 	} // else we are not reconnecting : nothing to do
 });

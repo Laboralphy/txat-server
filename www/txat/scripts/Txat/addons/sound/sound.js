@@ -57,9 +57,9 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 * @param string urlSound : url du fichier audio
 	 */
 	function addSoundBody(file, idSound) {
-		file = file || SOUND_DEFAULT;
+		file = typeof file !== 'undefined' ? file : SOUND_DEFAULT; 
 		file = file.substring(0,4) == 'http' ? file : URL_SOUND + file;
-		idSound = idSound || ID_PLAY_SOUND;
+		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;
 		$('body').append('<audio id="' + idSound + '" src="' + file + '"></audio>');
 	}	
 	
@@ -71,7 +71,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 */
 	function updateSoundBody(file, idSound) {
 		file = file.substring(0,4) == 'http' ? file : URL_SOUND + file;
-		idSound = idSound || ID_PLAY_SOUND;			
+		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;	
 		$('#' + idSound).attr('src', file);		
 	}
 	
@@ -81,7 +81,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 * @param string idSound : nom de l'attribut id de la balise à lire
 	 */	
 	function playSound(idSound) {
-		idSound = idSound || ID_PLAY_SOUND;
+		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;
 		document.querySelector('#' + idSound).play();
 	}
 	
@@ -91,7 +91,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 	 * @param string idSound : nom de l'attribut id de la balise à lire
 	 */	
 	function stopSound(idSound) {
-		idSound = idSound || ID_PLAY_SOUND;
+		idSound = typeof idSound !== 'undefined' ? idSound : ID_PLAY_SOUND;
 		document.querySelector('#' + idSound).pause();
 	}
 
@@ -206,11 +206,8 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		var $usermessage = $('span.usermessage', $item);
 		var message = $usermessage.text();
 		$start = message.split(' ');
-		if ($start[0] == "!play") {
-			$usermessage.html('Lecture du son : <audio controls '+ (soundPerso.emote.val?'autoplay':'') +'><source src="'+$start[1]+'" type="audio/mpeg">Your browser does not support the audio element.</audio> (<a href="'+$start[1]+'">'+$start[1]+'</a>)');
-		}
 		if (soundPerso.emote.val) {
-			var audio = "";
+			var audio;
 			switch (message) {
 				case '!gameover':
 					audio = "game-over.wav";
@@ -261,14 +258,21 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 					}, 6000);
 				}
 		}
-		if ($username != oApplication.sMe && soundPerso.newMessage.val) {
-			playSound();
-		}
-		if ($start[0] == '!arrival') {
-			$item.remove();
-			if ($start[1] && soundPerso.userArrival.val) {
-				updateSoundBody($start[1], ID_PLAY_SOUND_OTHER);		   
-				playSound(ID_PLAY_SOUND_OTHER);
+		if (!audio) {
+			switch($start[0]) {
+				case "!play":
+					$usermessage.html('Lecture du son : <audio controls '+ (soundPerso.emote.val?'autoplay':'') +'><source src="'+$start[1]+'" type="audio/mpeg">Your browser does not support the audio element.</audio> (<a href="'+$start[1]+'">'+$start[1]+'</a>)');
+					break;
+				case "!arrival":
+					$item.remove();
+					if ($start[1] && soundPerso.userArrival.val) {
+						updateSoundBody($start[1], ID_PLAY_SOUND_OTHER);		   
+						playSound(ID_PLAY_SOUND_OTHER);
+					}
+					break;
+				default:
+					playSound();
+					break;
 			}
 		}
 	});

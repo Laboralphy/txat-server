@@ -10,12 +10,11 @@ function createContextMenu(options,e) {
 		});
 		oMenu.append(oListMenu);
 		$('body').append(oMenu);
-		console.log();
-		left = oMenu.outerWidth() * 2 + e.pageX < e.screenX ? e.pageX : e.pageX - oMenu.outerWidth();
+		left = oMenu.outerWidth() * 2 + e.pageX < $(document).outerWidth() ? e.pageX : e.pageX - oMenu.outerWidth();
 		oMenu.css({top:e.pageY,left:left});
 		oMenu.click(function(){ $(this).remove(); });
 	} else {
-		console.log('Un objet event est requis pour utiliser cette fonction !');
+		console.log('Un objet event est requis pour utiliser createContextMenu() !');
 	}
 }
 $(document).on('mousedown',function(e){

@@ -271,7 +271,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 					}
 					break;
 				default:
-					playSound();
+					if (soundPerso.newMessage.val) playSound();
 					break;
 			}
 		}

@@ -101,7 +101,6 @@ $(window).on(
                   if (oConfig.extension != a.extension) {
                      _store('extension', a.extension);
                   }
-                  console.log("test", _store());
                }
             }
          });

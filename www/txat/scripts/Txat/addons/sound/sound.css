@@ -1,0 +1,18 @@
+.soundPopup .content label {
+	display: inline-block;
+	width: 200px;
+}
+.submitPopup {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+.soundMenu{
+	float:left;
+	font-size: 20px;
+	line-height: 17px;
+	padding: 0px;
+}
+.otherController {
+	margin-left: 10px;
+}

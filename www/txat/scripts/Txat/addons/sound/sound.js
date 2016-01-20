@@ -259,7 +259,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 					setTimeout(function(){
 						$usermessage.text(message);
 						stopSound(ID_PLAY_SOUND_OTHER);
-					}, 6000);
+					}, 10000);
 				}
 		}
 		if (!audio) {

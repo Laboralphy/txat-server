@@ -268,7 +268,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 					$usermessage.html('Lecture du son : <audio controls '+ (soundPerso.emote.val?'autoplay':'') +'><source src="'+$start[1]+'" type="audio/mpeg">Your browser does not support the audio element.</audio> (<a href="'+$start[1]+'">'+$start[1]+'</a>)');
 					break;
 				case "!arrival":
-					$item.remove();
+					data.cancel = true;
 					if ($start[1] && soundPerso.userArrival.val) {
 						updateSoundBody($start[1], ID_PLAY_SOUND_OTHER);		   
 						playSound(ID_PLAY_SOUND_OTHER);

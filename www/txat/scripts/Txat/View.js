@@ -127,6 +127,7 @@ O2.createClass('TXAT.View', {
 		this.trigger('chatItemAppended', oData);
 		if (!oData.cancel) {
 			this.oTabs[sTab].push($stuff.get(0));
+		} else {
 			$stuff.remove();
 		}
 		while (this.oTabs[sTab].length > this.MAX_CHANNEL_MESSAGE_COUNT) {

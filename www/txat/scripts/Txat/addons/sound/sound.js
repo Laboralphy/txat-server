@@ -12,7 +12,7 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 		'userArrival' 	: { 'label' : 'Son d\'arrivée'		, 'val' : true  , 'sound' : 'saut.mp3'},
 		'emote'			: { 'label' : 'Emotes'				, 'val' : true}
 	};
-	var SOUND_LISTING = ['allomcfly.mp3','atable.wav','default.mp3','game-over.wav','nomdezeus3.mp3','saut.wav','star-wars.mp3','un_petit_coup.mp3','wizz.mp3'];
+	var SOUND_LISTING = ['allomcfly.mp3','atable.wav','cafe.mp3','default.mp3','game-over.wav','nomdezeus3.mp3','saut.wav','star-wars.mp3','un_petit_coup.mp3','wizz.mp3'];
 	// Récupère le son personnalisé de l'utilisateur
 	var soundPerso = localStorage.getItem('txat_sound') && localStorage.getItem('txat_sound').charAt(0) == '{'?JSON.parse(localStorage.getItem('txat_sound')):SOUND_SETTINGS;
 	
@@ -240,6 +240,10 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				case '!gendarmerie':
 					audio = "http://lasonotheque.org/telecharger.php?format=mp3&id=0886&button=GO%3E";
 					$usermessage.html('<img src="http://i.skyrock.net/5557/78675557/pics/3098856709_1_3_Zq8poiCg.gif" alt="Gendarmerie !"/>');
+					break;
+				case '!cafe':
+					audio = "cafe.mp3";
+					$usermessage.html('<img src="https://media.giphy.com/media/zJ8ldRaGLnHTa/giphy.gif" alt="Café !"/>');
 					break;
 				case 'wizz':
 					audio = "wizz.mp3";

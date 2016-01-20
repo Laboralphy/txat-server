@@ -65,8 +65,8 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 				message = key +' est maintenant ['+ STATUSDISPO[value] +']';
 			});
 			updateStatus();
-			$item.remove();
-			if (Object.keys(json).length == 1) oView.appendChatItem(null, message, jsonStyle);
+			data.cancel = true;
+			if (Object.keys(json).length == 1) oView.appendChatItem(data.t, message, jsonStyle);
 		}
 	});
 	
@@ -80,8 +80,9 @@ $(window).on('txat.start', function(oEvent, oApplication, oView) {
 			oApplication.command('/say !status '+ JSON.stringify(STATUS));
 		}
 	});
-	oApplication.on('userList',function() { updateStatus(); });
+	oView.on('tabChanged',function() { updateStatus(); });
 	oApplication.on('channelDeparture',function() { updateStatus(); });
+
 	$(document).on("contextmenu",'#userZone .user',function(e){
 		var $item = $(this);
 		var $username = $item.text();

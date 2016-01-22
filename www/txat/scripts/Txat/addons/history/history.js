@@ -1,177 +1,227 @@
-$(window).on('txat.start', function(oEvent, oApplication, oView) {
-   var NS = 'history';
-   var TAG_START = '{{' + NS + ' ';
-   var TAG_END = '}}';
+$(window)
+		.on(
+				'txat.start',
+				function(oEvent, oApplication, oView) {
+					var NS = 'history';
+					var TAG_START = '{{' + NS + ' ';
+					var TAG_END = '}}';
 
-   var KEY_UP = 38;
-   var KEY_DOWN = 40;
-   var KEY_CTRL = 17;
-   var KEY_C= 67;
-   
-   var CTRL = false;
-   // var KEY_SLASH = 16;
-   // var KEY_ENTER = 13;
+					var KEY_UP = 38;
+					var KEY_DOWN = 40;
 
-   // la zone de saisie
-   var oInput = $("#input");
+					var KEY_CTRL = 17;
+					var KEY_C = 67;
 
-   // notre gestionnaire d'historique
-   var oHistoryManager = new History.Manager();
+					var CTRL = false;
+					// var KEY_SLASH = 16;
+					// var KEY_ENTER = 13;
 
-   // définition du man
-   oApplication.on('help', function(oCtx) {
-      oCtx.history = 'pour définir le nombre de messages à conserver';
-   });
+					// la zone de saisie
+					var oInput = $("#input");
 
-   oInput.on('keyup', function(oEvent) {
-//       console.log(oEvent.which);
-      if (oInput.is(':focus')) {
-         switch (oEvent.which) {
-            case KEY_UP:
-               CTRL = false;
-               var msg = oHistoryManager.getPrevMessage();
-               if (msg !== false) {
-                  oInput.val(msg);
-               }
-            break;
-            case KEY_DOWN:
-               CTRL = false;
-               var msg = oHistoryManager.getNextMessage();
-               if (msg !== false) {
-                  oInput.val(msg);
-               }
-            break;
-            case KEY_CTRL:
-               CTRL = true;
-            default:
-            case KEY_C:
-               if(CTRL == true) {
-                  CTRL = false;
-                  oInput.val('');
-               }
-            break;
-         }
-      }
-   });
+					// notre gestionnaire d'historique
+					var oHistoryManager = new History.Manager();
 
-   oView.on('chatItemAppended', function(data) {
-      var $item = $(data.o);
-      var $usermessage = $('span.usermessage', $item);
-      if ($usermessage.length > 0) {
-         var sContent = $usermessage.text();
-         if (data.history.user == oApplication.getUserName()) {
-            oHistoryManager.saveMessage(sContent);
-         }
-      }
-   });
+					// définition du man
+					oApplication
+							.on(
+									'help',
+									function(oCtx) {
+										oCtx.history = 'pour définir le nombre de messages à conserver';
+									});
 
-   // si command
-   oApplication.on('command', function(oContext) {
-      var cmd = oContext.c;
-      var param = oContext.p;
-      if (cmd != 'say') {
-         var saveMsg = "/" + cmd;
-         if (param && param != "undefined") {
-            saveMsg += " " + param;
-         }
-         oHistoryManager.saveMessage(saveMsg);
-      }
-   });
+					oInput.on('keyup', function(oEvent) {
+						// console.log(oEvent.which);
+						if (oInput.is(':focus')) {
+							switch (oEvent.which) {
+							case KEY_UP:
+								CTRL = false;
+								var msg = oHistoryManager.getPrevMessage();
+								if (msg !== false) {
+									oInput.val(msg);
+								}
+								break;
+							case KEY_DOWN:
+								CTRL = false;
+								var msg = oHistoryManager.getNextMessage();
+								if (msg !== false) {
+									oInput.val(msg);
+								}
+								break;
+							case KEY_CTRL:
+								CTRL = true;
+							case KEY_C:
+								if (CTRL == true) {
+									CTRL = false;
+									oInput.val('');
+								} else {
+									CTRL = false;
+								}
+								break;
+							default:
+								CTRL = false;
+								break;
+							}
+						}
+					});
 
-   // créer une nouvelle commande /code
-   oApplication.defineCommand('history', function() {
-      var $pop = oView.getPopup('historyPopup', 'Rappel de commandes!');
-      if (!$pop.data('history')) { // pour ne pas refaire deux fois le même
-         // code
-         $pop.addClass('p640')
-         var $popcont = $('div.content', $pop);
-         $popcont.html('<p>taille de l\'historique</p>' + '<input type=\'text\' name="sizeHistory"/>' + '<br/>' + '<button type="button">enregistrer</button>');
-         var $size = $("input", $popcont);
-         $size.val(oHistoryManager.getSize());
-         var $button = $('button', $popcont);
-         $button.on('click', function(oEvent) {
-            var size = $size.val();
-            oHistoryManager.setSize(size);
-            oInput.focus();
-            $pop.fadeOut('fast');
-         });
-         $pop.data('history', true);
-      }
-      $pop.fadeIn('fast');
-   });
-});
+					oView
+							.on(
+									'chatItemAppended',
+									function(data) {
+										var $item = $(data.o);
+										var $usermessage = $(
+												'span.usermessage', $item);
+										if ($usermessage.length > 0) {
+											var sContent = $usermessage.text();
+											if (data.history.user == oApplication
+													.getUserName()) {
+												oHistoryManager
+														.saveMessage(sContent);
+											}
+										}
+									});
+
+					// si command
+					oApplication.on('command', function(oContext) {
+						var cmd = oContext.c;
+						var param = oContext.p;
+						if (cmd != 'say') {
+							var saveMsg = "/" + cmd;
+							if (param && param != "undefined") {
+								saveMsg += " " + param;
+							}
+							oHistoryManager.saveMessage(saveMsg);
+						}
+					});
+
+					// créer une nouvelle commande /code
+					oApplication
+							.defineCommand(
+									'history',
+									function() {
+										var $pop = oView.getPopup(
+												'historyPopup',
+												'Rappel de commandes!');
+										if (!$pop.data('history')) { // pour
+																		// ne
+																		// pas
+																		// refaire
+																		// deux
+																		// fois
+																		// le
+																		// même
+											// code
+											$pop.addClass('p640')
+											var $popcont = $('div.content',
+													$pop);
+											$popcont
+													.html('<p>taille de l\'historique</p>'
+															+ '<input type=\'text\' name="sizeHistory"/>'
+															+ '<br/>'
+															+ '<button type="button">enregistrer</button>');
+											var $size = $("input", $popcont);
+											$size
+													.val(oHistoryManager
+															.getSize());
+											var $button = $('button', $popcont);
+											$button.on('click',
+													function(oEvent) {
+														var size = $size.val();
+														oHistoryManager
+																.setSize(size);
+														oInput.focus();
+														$pop.fadeOut('fast');
+													});
+											$pop.data('history', true);
+										}
+										$pop.fadeIn('fast');
+									});
+				});
 O2.createClass('History.Manager', {
 
-   _history : [],
-   _current : 0,
-   _size : 20,
+	_history : [],
+	_current : false,
+	_size : 20,
 
-   __construct : function() {
-      // storing
-      var sHistory = localStorage.getItem('history_msg');
-      if (sHistory == null) {
-         localStorage.setItem('history_msg', JSON.stringify(this._history));
-         localStorage.setItem('history_size', this._size);
-      } else {
-         this._history = JSON.parse(sHistory);
-         this._size = localStorage.getItem('history_size');
-      }
-   },
+	__construct : function() {
+		// storing
+		var sHistory = localStorage.getItem('history_msg');
+		if (sHistory == null) {
+			localStorage.setItem('history_msg', JSON.stringify(this._history));
+			localStorage.setItem('history_size', this._size);
+		} else {
+			this._history = JSON.parse(sHistory);
+			this._size = localStorage.getItem('history_size');
+		}
+	},
+	
 
-   getPrevMessage : function() {
-      this._current++;
-      if (this._current in this._history) {
-         var msg = this._history[this._current];
-         return msg;
-      } else {
-         if (this._history.length == 0) {
-            return false;
-         } else {
-            this._current = 0;
-            var msg = this._history[this._current];
-            return msg;
-         }
-      }
-   },
+	/**
+	 * up in the history
+	 */
+	getPrevMessage : function() {
+		if(this._current === false) {
+			this._current = 0;
+		} else {		
+			this._current++;
+		}
+		if (this._current in this._history) {
+			var msg = this._history[this._current];
+			return msg;
+		} else {
+			if (this._history.length == 0) {
+				return false;
+			} else {
+				this._current = 0;
+				var msg = this._history[this._current];
+				return msg;
+			}
+		}
+	},
 
-   getNextMessage : function() {
-      this._current--;
-      if (this._current in this._history) {
-         var msg = this._history[this._current];
-         return msg;
-      } else {
-         if (this._history.length == 0) {
-            return false;
-         } else {
-            this._current = this._history.length - 1;
-            var msg = this._history[this._current];
-            return msg;
-         }
-      }
-   },
+	getNextMessage : function() {
+		if(this._current === false) {
+			this._current = 0;
+		} else {		
+			this._current--;
+		}
+		if (this._current in this._history) {
+			var msg = this._history[this._current];
+			return msg;
+		} else {
+			if (this._history.length == 0) {
+				return false;
+			} else {
+				this._current = this._history.length - 1;
+				var msg = this._history[this._current];
+				return msg;
+			}
+		}
+	},
 
-   /**
-    * Enregistre les messages persos
-    * 
-    * @params string msg message
-    * @return void
-    */
-   saveMessage : function(msg) {
-      // on place le message au début
-      this._history.unshift(msg);
-      // on supprime les éléments supérieurs à la limite définie
-      this._history.splice(this._size, this._history.length - this._size);
-      localStorage.setItem('history_msg', JSON.stringify(this._history));
-      this._current = 0;
-   },
+	/**
+	 * Enregistre les messages persos
+	 * 
+	 * @params string msg message
+	 * @return void
+	 */
+	saveMessage : function(msg) {
+		// on place le message au début
+		this._history.unshift(msg);
+		// on supprime les éléments supérieurs à la limite définie
+		this._history.splice(this._size, this._history.length - this._size);
+		localStorage.setItem('history_msg', JSON.stringify(this._history));
+		this._current = false;
+	},
 
-   getSize : function() {
-      return this._size;
-   },
+	getSize : function() {
+		return this._size;
+	},
 
-   setSize : function(size) {
-      this._size = size;
-      localStorage.setItem('history_size', this._size);
-   }
+	setSize : function(size) {
+		this._size = size;
+		localStorage.setItem('history_size', this._size);
+	}
 
 });
